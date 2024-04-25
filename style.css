@@ -14,6 +14,7 @@ body {
 body {
   position: relative;
 }
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -49,26 +50,25 @@ nav div:nth-child(3) {
 nav div:nth-child(4) {
   font-size: 2.5vh;
 }
-.nav-scroll {
-  width: 10vw;
+#nav-scroll {
   position: fixed;
-  bottom: 1vh;
+  bottom: 2vh;
   left: 50%;
-  transform: translate(-50%);
-  background-color: #e82224;
-  border-radius: 10%;
-  padding: 3vh 1vw;
-}
-.nav-scroll div {
-  display: none;
-}
-.nav-scroll div:nth-child(2) {
-  display: block;
+  transform: translate(-50%) scale(0);
+  height: 8vh;
+  width: 10vw;
+  background-color: rgb(42, 41, 41);
   color: white;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 2px 2px 2px 2px black;
+  cursor: pointer;
 }
-.nav-scroll div:nth-child(2) i {
-  font-size: 4vh;
-  margin-right: 0.8rem;
+#nav-scroll i,span {
+  font-size: 3.5vh;
 }
 #page-1 {
   height: 100vh;
