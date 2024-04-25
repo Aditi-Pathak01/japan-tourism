@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /*font-family: Domaine Display Condensed;*/
+  /*font-family: Neue Haas Grotesk Display Pro;*/
+  font-family: girlroy-regular;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  position: relative;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  height: 10vh;
+  width: 100vw;
+  padding: 4vh 13vh;
+  z-index: 10;
+  position: fixed;
+}
+nav div {
+  cursor: pointer;
+  color: #333;
+  font-family: Osake;
+  letter-spacing: 2px;
+}
+nav div:first-child {
+  height: 5vh;
+  flex-basis: 5%;
+}
+nav div img {
+  height: 100%;
+  transform: scale(2);
+  border-radius: 50%;
+}
+nav div:nth-child(2) {
+  font-size: 3vh;
+  margin-right: 50vw;
+}
+nav div:nth-child(3) {
+  font-size: 2.5vh;
+}
+nav div:nth-child(4) {
+  font-size: 2.5vh;
+}
+.nav-scroll {
+  width: 10vw;
+  position: fixed;
+  bottom: 1vh;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: #e82224;
+  border-radius: 10%;
+  padding: 3vh 1vw;
+}
+.nav-scroll div {
+  display: none;
+}
+.nav-scroll div:nth-child(2) {
+  display: block;
+  color: white;
+}
+.nav-scroll div:nth-child(2) i {
+  font-size: 4vh;
+  margin-right: 0.8rem;
+}
+#page-1 {
+  height: 100vh;
+  width: 100vw;
+  background: url(assets/bg2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#page-1 h1 {
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+#page-1 h1 > span {
+  letter-spacing: 8px;
+  font-size: 5vw;
+  color: #111;
+  transform: translateY(100px);
+  transition: all ease 1.5s;
+  font-family: osake;
+  background: url(assets/red\ paint.png);
+  background-size: cover;
+  background-position: center;
+}
+#page-1 i {
+  position: fixed;
+  right: 3.5vw;
+  bottom: 2vh;
+  font-size: 6vh;
+  color: crimson;
+  text-shadow: 2px 2px 2px black;
+  opacity: 0;
+  transition: opacity ease 0.3s;
+  cursor: pointer;
+}
+#page-2 {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(53, 24, 158);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
