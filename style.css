@@ -68,7 +68,8 @@ nav div:nth-child(4) {
   border: 0.4px solid white;
   z-index: 10;
 }
-#nav-scroll i,span {
+#nav-scroll i,
+span {
   font-size: 3.5vh;
 }
 #page-1 {
@@ -112,7 +113,7 @@ nav div:nth-child(4) {
   transition: all ease 0.6s;
   cursor: pointer;
 }
-.menu-opts a{
+.menu-opts a {
   display: block;
   height: 6vh;
   font-size: 3vh;
@@ -120,19 +121,25 @@ nav div:nth-child(4) {
   font-family: Editorial New;
   text-decoration: none;
 }
-.menu-opts a:hover{
- text-decoration: underline;
+.menu-opts a:hover {
+  text-decoration: underline;
 }
 #page-2 {
   height: 100vh;
   width: 100vw;
-  background-color: rgb(53, 24, 158);
+  background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+#page-2 video {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
 #page-3 {
-  min-height: 120vh;
+  min-height: 124vh;
   width: 100vw;
   padding: 7vh 3vw;
   background-image: url(assets/p4.avif);
@@ -149,7 +156,8 @@ nav div:nth-child(4) {
   width: 100%;
   padding: 3rem;
 }
-#p3-left,#p3-right {
+#p3-left,
+#p3-right {
   flex-basis: 50%;
 }
 #p3-left h1 {
@@ -157,7 +165,7 @@ nav div:nth-child(4) {
   text-align: left;
   margin-top: 14%;
   font-size: 10vh;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 #p3-right .elem {
   height: fit-content;
@@ -168,10 +176,11 @@ nav div:nth-child(4) {
   backdrop-filter: blur(5px);
 }
 .elem h2 {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 2vw;
 }
-.elem p,.elem p>span {
+.elem p,
+.elem p > span {
   margin-top: 0.6rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1.08vw;
@@ -185,13 +194,13 @@ nav div:nth-child(4) {
   position: absolute;
   left: 0;
   bottom: 0;
-  transform: translate(-50%,-50%);
-  height: 70px;
-  width: 70px;
+  transform: translate(-50%, -50%);
+  height: 90px;
+  width: 90px;
   border-radius: 50%;
   overflow: hidden;
   z-index: -1;
-  scale :0
+  scale: 0;
 }
 #img-hover img {
   height: 100%;
@@ -199,5 +208,3 @@ nav div:nth-child(4) {
   object-fit: cover;
   object-position: left;
 }
-
-

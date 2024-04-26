@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
     y: 20,
   });
 });
-
 document.addEventListener("scroll", () => {
   if (scrollY > 0) {
     gsap.to(nav, {
