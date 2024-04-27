@@ -174,6 +174,8 @@ span {
   z-index: 2;
   overflow: hidden;
   backdrop-filter: blur(5px);
+  color : #272424;
+  transform: translateX(115%);
 }
 .elem h2 {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;

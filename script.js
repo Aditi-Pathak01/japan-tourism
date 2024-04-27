@@ -2,8 +2,12 @@ let title = document.querySelector("#title");
 let nav = document.querySelector("nav");
 let backToTop = document.querySelector("#top-btn");
 let navScroll = document.querySelector("#nav-scroll");
-let hoverElems = document.querySelectorAll(".elem-h");
+let hoverElems = document.querySelectorAll(".elem");
+let hoverElemsH = document.querySelectorAll(".elem-h");
+let p3LeftH1 = document.querySelector("#p3-left h1")
 
+
+//loading animation
 document.addEventListener("DOMContentLoaded", () => {
   var tl = gsap.timeline();
   tl.from("#page-1", {
@@ -18,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     y: 20,
   });
 });
+//nav animation
 document.addEventListener("scroll", () => {
   if (scrollY > 0) {
     gsap.to(nav, {
@@ -41,11 +46,11 @@ document.addEventListener("scroll", () => {
     });
   }
 });
+//Top btn animation
 backToTop.addEventListener("click", (scrollX) => {
   document.documentElement.scrollTop = 0;
 });
-
-
+//NacOn Scroll Animation :-click
 navScroll.addEventListener("click", () => {
   gsap.to(navScroll, {
     height: "40vh",
@@ -55,12 +60,12 @@ navScroll.addEventListener("click", () => {
     "<div class=menu-opts><a>Culture</a><a>Destination</a><a>Food</a><a>NightLife</a><a>Accomodation</a></div>";
   navScroll.innerHTML = clutter;
 
-let culture = navScroll.childNodes[0].childNodes[0]
-culture.addEventListener("click",()=>{
- culture.setAttribute("href","#page-3")
-})
+  let culture = navScroll.childNodes[0].childNodes[0];
+  culture.addEventListener("click", () => {
+    culture.setAttribute("href", "#page-3");
+  });
 });
-
+//NacOn Scroll Animation :-Mouse leave
 navScroll.addEventListener("mouseleave", () => {
   gsap.to(navScroll, {
     height: "8vh",
@@ -69,7 +74,8 @@ navScroll.addEventListener("mouseleave", () => {
   navScroll.innerHTML = '<i class="ri-menu-add-line"></i><span>Menu</span>';
 });
 
-hoverElems.forEach((elem) => {
+//page3 animation:-cursor
+hoverElemsH.forEach((elem) => {
   elem.addEventListener("mouseenter", () => {
     gsap.to(elem.childNodes[3], {
       scale: 1,
@@ -88,9 +94,20 @@ hoverElems.forEach((elem) => {
       scale: 0,
     });
   });
-  elem.addEventListener("click", () => {
-    gsap.to(".elem-h", {
-      y: 10,
-    });
-  });
+  hoverElemsH[0].style.marginTop = "3vh";
 });
+//page3 animation:-scroll
+function handlePage3() {
+  for (var i=0;i<hoverElems.length;i++){
+    let windowH = window.innerHeight;
+    let rectTop = hoverElems[i].getBoundingClientRect().y
+    if(rectTop < windowH - 120){
+      gsap.to(hoverElems[i],{
+       x : 0,
+       duration : 2,
+       stagger : 3
+      })
+    }
+  }
+}
+window.addEventListener("scroll", handlePage3);
