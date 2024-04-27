@@ -5,6 +5,7 @@ let navScroll = document.querySelector("#nav-scroll");
 let hoverElems = document.querySelectorAll(".elem");
 let hoverElemsH = document.querySelectorAll(".elem-h");
 let culture2Items = document.querySelectorAll(".item");
+let rediscover = document.querySelector("#rediscover");
 
 //loading animation
 document.addEventListener("DOMContentLoaded", () => {
@@ -21,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     y: 20,
   });
 });
+
 //nav animation
 document.addEventListener("scroll", () => {
   if (scrollY > 0) {
@@ -45,10 +47,12 @@ document.addEventListener("scroll", () => {
     });
   }
 });
+
 //Top btn animation
 backToTop.addEventListener("click", (scrollX) => {
   document.documentElement.scrollTop = 0;
 });
+
 //NacOn Scroll Animation :-click
 navScroll.addEventListener("click", () => {
   gsap.to(navScroll, {
@@ -63,6 +67,10 @@ navScroll.addEventListener("click", () => {
   culture.addEventListener("click", () => {
     culture.setAttribute("href", "#page-3");
   });
+  let destination = navScroll.childNodes[0].childNodes[1];
+  destination.addEventListener("click", () => {
+    destination.setAttribute("href", "#destinations");
+  });
 });
 //NacOn Scroll Animation :-Mouse leave
 navScroll.addEventListener("mouseleave", () => {
@@ -75,7 +83,46 @@ navScroll.addEventListener("mouseleave", () => {
 
 //page-2 Animation
 
-//page3 animation:-cursor
+
+
+
+//page4(part-1)animation:-custom curser
+rediscover.addEventListener("mouseenter",()=>{
+  gsap.to(rediscover.childNodes[3],{
+    scale : 1
+  })
+})
+rediscover.addEventListener("mousemove",(dets)=>{
+  gsap.to(rediscover.childNodes[3],{
+    left : dets.x,
+    top : dets.y,
+  })
+})
+rediscover.addEventListener("mouseleave",()=>{
+  gsap.to(rediscover.childNodes[3],{
+    scale : 0
+  })
+})
+
+//page4(part-2) animation:-scroll
+function handlePage3() {
+  for (var i = 0; i < hoverElems.length; i++) {
+    let windowH = window.innerHeight;
+    let rectTop = hoverElems[i].getBoundingClientRect().y;
+    if (rectTop < windowH - 50) {
+      console.log("hi")
+      gsap.to(hoverElems[i], {
+        y: 0,
+        duration: 1.9,
+        stagger : 1
+      });
+    }
+  }
+  hoverElems[2].style.marginTop = "5vh"
+}
+window.addEventListener("scroll", handlePage3);
+
+//page4 (part-2)animation:-cursor
 hoverElemsH.forEach((elem) => {
   elem.addEventListener("mouseenter", () => {
     gsap.to(elem.childNodes[3], {
@@ -95,22 +142,5 @@ hoverElemsH.forEach((elem) => {
       scale: 0,
     });
   });
-  hoverElemsH[0].style.marginTop = "4vh";
 });
-//page3 animation:-scroll
-function handlePage3() {
-  for (var i = 0; i < hoverElems.length; i++) {
-    let windowH = window.innerHeight;
-    let rectTop = hoverElems[i].getBoundingClientRect().y;
-    if (rectTop < windowH - 120) {
-      gsap.to(hoverElems[i], {
-        x: 0,
-        duration: 1.8,
-        stagger: 4,
-      });
-    }
-  }
-}
-window.addEventListener("scroll", handlePage3);
-
 
