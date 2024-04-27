@@ -53,7 +53,7 @@ backToTop.addEventListener("click", (scrollX) => {
   document.documentElement.scrollTop = 0;
 });
 
-//NacOn Scroll Animation :-click
+//Nav-On Scroll Animation :-click
 navScroll.addEventListener("click", () => {
   gsap.to(navScroll, {
     height: "40vh",
@@ -72,7 +72,7 @@ navScroll.addEventListener("click", () => {
     destination.setAttribute("href", "#destinations");
   });
 });
-//NacOn Scroll Animation :-Mouse leave
+//NavOn Scroll Animation :-Mouse leave
 navScroll.addEventListener("mouseleave", () => {
   gsap.to(navScroll, {
     height: "8vh",
@@ -84,7 +84,26 @@ navScroll.addEventListener("mouseleave", () => {
 //page-2 Animation
 
 
+//page3-collage animation 
+culture2Items.forEach((item)=>{
+  item.addEventListener("mousemove",()=>{
+    gsap.to(item,{
+      y: -5,
+      duration : 1
+      });
+    gsap.to(item.childNodes[1],{
+    bottom : "60%",
+    opacity : 1
+    })
+  })
 
+  item.addEventListener("mouseleave",()=>{
+    gsap.to(item.childNodes[1],{
+      bottom : 0,
+      opacity : 0
+      })
+  })
+})
 
 //page4(part-1)animation:-custom curser
 rediscover.addEventListener("mouseenter",()=>{
@@ -104,7 +123,7 @@ rediscover.addEventListener("mouseleave",()=>{
   })
 })
 
-//page4(part-2) animation:-scroll
+//page4(part-2) animation:-reveal on scroll
 function handlePage3() {
   for (var i = 0; i < hoverElems.length; i++) {
     let windowH = window.innerHeight;
@@ -113,6 +132,7 @@ function handlePage3() {
       console.log("hi")
       gsap.to(hoverElems[i], {
         y: 0,
+        opacity : 1,
         duration: 1.9,
         stagger : 1
       });
@@ -122,7 +142,7 @@ function handlePage3() {
 }
 window.addEventListener("scroll", handlePage3);
 
-//page4 (part-2)animation:-cursor
+//page4 (part-2)animation:-cursor on mousemove
 hoverElemsH.forEach((elem) => {
   elem.addEventListener("mouseenter", () => {
     gsap.to(elem.childNodes[3], {
