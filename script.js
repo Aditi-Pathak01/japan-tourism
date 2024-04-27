@@ -4,8 +4,7 @@ let backToTop = document.querySelector("#top-btn");
 let navScroll = document.querySelector("#nav-scroll");
 let hoverElems = document.querySelectorAll(".elem");
 let hoverElemsH = document.querySelectorAll(".elem-h");
-let p3LeftH1 = document.querySelector("#p3-left h1")
-
+let culture2Items = document.querySelectorAll(".item");
 
 //loading animation
 document.addEventListener("DOMContentLoaded", () => {
@@ -74,6 +73,8 @@ navScroll.addEventListener("mouseleave", () => {
   navScroll.innerHTML = '<i class="ri-menu-add-line"></i><span>Menu</span>';
 });
 
+//page-2 Animation
+
 //page3 animation:-cursor
 hoverElemsH.forEach((elem) => {
   elem.addEventListener("mouseenter", () => {
@@ -94,20 +95,22 @@ hoverElemsH.forEach((elem) => {
       scale: 0,
     });
   });
-  hoverElemsH[0].style.marginTop = "3vh";
+  hoverElemsH[0].style.marginTop = "4vh";
 });
 //page3 animation:-scroll
 function handlePage3() {
-  for (var i=0;i<hoverElems.length;i++){
+  for (var i = 0; i < hoverElems.length; i++) {
     let windowH = window.innerHeight;
-    let rectTop = hoverElems[i].getBoundingClientRect().y
-    if(rectTop < windowH - 120){
-      gsap.to(hoverElems[i],{
-       x : 0,
-       duration : 2,
-       stagger : 3
-      })
+    let rectTop = hoverElems[i].getBoundingClientRect().y;
+    if (rectTop < windowH - 120) {
+      gsap.to(hoverElems[i], {
+        x: 0,
+        duration: 1.8,
+        stagger: 4,
+      });
     }
   }
 }
 window.addEventListener("scroll", handlePage3);
+
+

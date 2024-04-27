@@ -14,7 +14,7 @@ body {
 body {
   position: relative;
 }
-
+/*page-1*/
 nav {
   display: flex;
   justify-content: space-between;
@@ -124,22 +124,14 @@ span {
 .menu-opts a:hover {
   text-decoration: underline;
 }
+/*page-2*/
 #page-2 {
   height: 100vh;
   width: 100vw;
-  background-color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 1rem;
 }
-#page-2 video {
-  height: 100%;
-  width: 100%;
-  position: relative;
-}
-
 #page-3 {
-  min-height: 124vh;
+  min-height: 128vh;
   width: 100vw;
   padding: 7vh 3vw;
   background-image: url(assets/p4.avif);
@@ -163,7 +155,7 @@ span {
 #p3-left h1 {
   color: whitesmoke;
   text-align: left;
-  margin-top: 14%;
+  margin-top: 20%;
   font-size: 10vh;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
@@ -174,7 +166,7 @@ span {
   z-index: 2;
   overflow: hidden;
   backdrop-filter: blur(5px);
-  color : #272424;
+  color: #272424;
   transform: translateX(115%);
 }
 .elem h2 {
@@ -210,3 +202,89 @@ span {
   object-fit: cover;
   object-position: left;
 }
+#culture-2 {
+  height: 100vh;
+  width: 100vw;
+  padding: 0.5rem;
+}
+#culture-2-container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-row: auto;
+  gap: 0.5rem;
+  grid-template-areas:
+    "aside sake sake zoo"
+    "aside bath kabuki zoo"
+    "aside bath anime  zoo";
+}
+.item {
+  border: 2px solid rgb(225, 209, 209);
+  border-radius: 1vh;
+  color: white;
+  font-size: 1.8vw;
+  transition: all ease 1s ease-in-out;
+}
+.item:nth-child(1) {
+  grid-area: zoo;
+  background: url(assets/panda10.webp);
+  background-size: cover;
+  background-position: center;
+  padding-right: 2rem;
+}
+
+.item:nth-child(1) h1 {
+  font-size: 2.8vw;
+  margin-top: 9vh;
+  margin-left: 2vh;
+}
+.item:nth-child(2) {
+  background: url(assets/p6.avif);
+  background-size: cover;
+  background-position: center;
+  grid-area: aside;
+  padding: 3rem 1.5rem 2rem;
+}
+.item:nth-child(2) h1 {
+  margin-top: 1vw;
+}
+.item:nth-child(3) {
+  grid-area: sake;
+  background: url(assets/sake4.avif);
+  background-size: cover;
+  background-position: right;
+  text-align: left;
+  padding: 4rem;
+  height: 35vh;
+}
+.item:nth-child(4) {
+  grid-area: bath;
+  background: url(assets/onsen8.jpeg);
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+}
+.item:nth-child(4) h1 {
+  margin-top: 15vw;
+  margin-left: 5vw;
+}
+.item:nth-child(5) {
+  grid-area: kabuki;
+  background: url(assets/kabuki1.avif);
+  background-size: cover;
+  background-position: center;
+}
+.item:nth-child(5) h1,.item:nth-child(6) h1 {
+  margin-top: 7.5rem;
+  margin-left: 7rem;
+  text-shadow: 2px 2px 2px black;
+  text-transform: uppercase;
+}
+.item:nth-child(6) {
+  grid-area: anime;
+  background: url(assets/anime2.webp);
+  background-size: cover;
+  background-position: center;
+}
+
