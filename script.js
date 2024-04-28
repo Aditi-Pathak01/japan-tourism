@@ -93,7 +93,8 @@ culture2Items.forEach((item)=>{
       });
     gsap.to(item.childNodes[1],{
     bottom : "60%",
-    opacity : 1
+    opacity : 1,
+    duration : 1.2
     })
   })
 

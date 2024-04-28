@@ -280,7 +280,6 @@ span {
   background-position: center;
   height: 25vh;
   width: 12vw;
-  transform: translateY(-2px);
 }
 
 .item:nth-child(5) h1 {
@@ -294,9 +293,9 @@ span {
   background: url(assets/anime2.jpeg);
   background-size: cover;
   background-position: center;
-  height: 17vh;
+  height: 18vh;
   width: 12vw;
-  transform: translateY(-8px) scaleY(1.1);
+  margin-bottom: 1vh;
 }
 .item:nth-child(6) h1 {
   margin-top: 7vh;
