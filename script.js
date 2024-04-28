@@ -6,6 +6,7 @@ let hoverElems = document.querySelectorAll(".elem");
 let hoverElemsH = document.querySelectorAll(".elem-h");
 let culture2Items = document.querySelectorAll(".item");
 let rediscover = document.querySelector("#rediscover");
+let festivalSec = document.querySelector("#festival-sec");
 
 //loading animation
 document.addEventListener("DOMContentLoaded", () => {
@@ -84,45 +85,45 @@ navScroll.addEventListener("mouseleave", () => {
 //page-2 Animation
 
 
-//page3-collage animation 
-culture2Items.forEach((item)=>{
-  item.addEventListener("mousemove",()=>{
-    gsap.to(item,{
+//page3-collage animation
+culture2Items.forEach((item) => {
+  item.addEventListener("mousemove", () => {
+    gsap.to(item, {
       y: -5,
-      duration : 1
-      });
-    gsap.to(item.childNodes[1],{
-    bottom : "60%",
-    opacity : 1,
-    duration : 1.2
-    })
-  })
+      duration: 1,
+    });
+    gsap.to(item.childNodes[1], {
+      bottom: "60%",
+      opacity: 1,
+      duration: 1.2,
+    });
+  });
 
-  item.addEventListener("mouseleave",()=>{
-    gsap.to(item.childNodes[1],{
-      bottom : 0,
-      opacity : 0
-      })
-  })
-})
+  item.addEventListener("mouseleave", () => {
+    gsap.to(item.childNodes[1], {
+      bottom: 0,
+      opacity: 0,
+    });
+  });
+});
 
 //page4(part-1)animation:-custom curser
-rediscover.addEventListener("mouseenter",()=>{
-  gsap.to(rediscover.childNodes[3],{
-    scale : 1
-  })
-})
-rediscover.addEventListener("mousemove",(dets)=>{
-  gsap.to(rediscover.childNodes[3],{
-    left : dets.x,
-    top : dets.y,
-  })
-})
-rediscover.addEventListener("mouseleave",()=>{
-  gsap.to(rediscover.childNodes[3],{
-    scale : 0
-  })
-})
+rediscover.addEventListener("mouseenter", () => {
+  gsap.to(rediscover.childNodes[3], {
+    scale: 1,
+  });
+});
+rediscover.addEventListener("mousemove", (dets) => {
+  gsap.to(rediscover.childNodes[3], {
+    left: dets.x,
+    top: dets.y,
+  });
+});
+rediscover.addEventListener("mouseleave", () => {
+  gsap.to(rediscover.childNodes[3], {
+    scale: 0,
+  });
+});
 
 //page4(part-2) animation:-reveal on scroll
 function handlePage3() {
@@ -130,16 +131,16 @@ function handlePage3() {
     let windowH = window.innerHeight;
     let rectTop = hoverElems[i].getBoundingClientRect().y;
     if (rectTop < windowH - 50) {
-      console.log("hi")
+      console.log("hi");
       gsap.to(hoverElems[i], {
         y: 0,
-        opacity : 1,
+        opacity: 1,
         duration: 1.9,
-        stagger : 1
+        stagger: 1,
       });
     }
   }
-  hoverElems[2].style.marginTop = "5vh"
+  hoverElems[2].style.marginTop = "5vh";
 }
 window.addEventListener("scroll", handlePage3);
 
@@ -164,4 +165,3 @@ hoverElemsH.forEach((elem) => {
     });
   });
 });
-

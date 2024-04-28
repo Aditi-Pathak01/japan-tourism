@@ -165,7 +165,7 @@ span {
   align-items: start;
   min-height: 100%;
   width: 100%;
-  padding: 3rem;
+  padding: 2vw;
 }
 
 #p3-left,
@@ -180,6 +180,95 @@ span {
   font-size: 10vh;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
+#p3-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 1vw;
+}
+#p3-right #festival-sec {
+  height: 9vh;
+  width: 20vw;
+  border: 1px solid black;
+  border-radius: 1vw;
+  padding: 0 4vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#festival-sec>h1 a {
+  text-decoration: none;
+  color: #111;
+  font-size: 1.9vw;
+}
+#festival-desc {
+  min-height: 150vh;
+  width: 100vw;
+  padding: 3vw;
+}
+#festival-desc h1{
+  height: 20vh;
+  padding-top: 5vh;
+  font-size: 4vw;
+  text-align: center;
+  font-family: OSAKE ;
+  color: white;
+  font-weight: 300;
+  background-color: #a61a1a;
+  border-radius:1vw;
+}
+.fest {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 5vw;
+}
+#fest-text {
+  width: 50%;
+}
+#fest-text p {
+  height: fit-content;
+  padding: 2vw;
+  font-size: 1.8vw;
+  color: #333;
+}
+#fest-text p span {
+  font-size: 2vw;
+  color: #842828;
+}
+
+#fest-img  {
+  height: 150vh;
+  border: 1px solid black;
+  width: 35vw;
+  object-fit: cover;
+  border-radius: 1vh;
+  overflow-y:auto;
+  overflow-x: hidden;
+  margin-top: 2rem;
+}
+#fest-img  img {
+  height: 40%;
+  width: 100%;
+  object-fit: cover;
+}
+.img-box {
+ animation: moveup 10s linear  infinite;
+}
+@keyframes moveup {
+  0%{
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
 
 #culture-2 {
   height: 100vh;
