@@ -115,8 +115,8 @@ rediscover.addEventListener("mouseenter", () => {
 });
 rediscover.addEventListener("mousemove", (dets) => {
   gsap.to(rediscover.childNodes[3], {
-    left: dets.x - 50,
-    top: dets.y - 50,
+    left: dets.x - 130,
+    top: dets.y - 180,
   });
   gsap.to(rediscover.childNodes[5], {
    scale :1,

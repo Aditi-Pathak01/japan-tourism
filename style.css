@@ -401,12 +401,13 @@ span {
   background-position: center;
 }
 #rediscover {
-  height: 70vh;
+  height: 40vh;
   width: 100vw;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   position: relative;
+  cursor: none;
 }
 #rediscover h1 {
   font-size: 6vw;
@@ -423,7 +424,7 @@ span {
 #rediscover p {
   font-size: 1.8vw;
   position: absolute;
-  bottom: 35%;
+  bottom: 50%;
   color:rgb(196, 72, 72);
   letter-spacing: 0.1vw;
   scale: 0;
