@@ -6,6 +6,7 @@ let hoverElems = document.querySelectorAll(".elem");
 let hoverElemsH = document.querySelectorAll(".elem-h");
 let culture2Items = document.querySelectorAll(".item");
 let rediscover = document.querySelector("#rediscover");
+let tBox = document.querySelector(".t-box");
 let festivalSec = document.querySelector("#festival-sec");
 
 //loading animation
@@ -84,7 +85,6 @@ navScroll.addEventListener("mouseleave", () => {
 
 //page-2 Animation
 
-
 //page3-collage animation
 culture2Items.forEach((item) => {
   item.addEventListener("mousemove", () => {
@@ -115,8 +115,12 @@ rediscover.addEventListener("mouseenter", () => {
 });
 rediscover.addEventListener("mousemove", (dets) => {
   gsap.to(rediscover.childNodes[3], {
-    left: dets.x,
-    top: dets.y,
+    left: dets.x - 50,
+    top: dets.y - 50,
+  });
+  gsap.to(rediscover.childNodes[5], {
+   scale :1,
+   duration : 0.5
   });
 });
 rediscover.addEventListener("mouseleave", () => {
@@ -125,13 +129,15 @@ rediscover.addEventListener("mouseleave", () => {
   });
 });
 
+
+
+
 //page4(part-2) animation:-reveal on scroll
 function handlePage3() {
   for (var i = 0; i < hoverElems.length; i++) {
     let windowH = window.innerHeight;
     let rectTop = hoverElems[i].getBoundingClientRect().y;
     if (rectTop < windowH - 50) {
-      console.log("hi");
       gsap.to(hoverElems[i], {
         y: 0,
         opacity: 1,

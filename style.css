@@ -401,27 +401,31 @@ span {
   background-position: center;
 }
 #rediscover {
-  height: 90vh;
+  height: 70vh;
   width: 100vw;
-  border: 1px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  cursor: none;
 }
 #rediscover h1 {
-  font-size: 5vw;
+  font-size: 6vw;
   font-family: Gilroy-SemiBold;
+  z-index: 1;
 }
 #rediscover #crsr {
   position: absolute;
-  transform: translate(-50%, -50%);
-  height: 80px;
-  width: 80px;
+  height: 14vh;
+  width: 8vw;
   border-radius: 50%;
   background-color: red;
-  mix-blend-mode: multiply;
+}
+#rediscover p {
+  font-size: 1.8vw;
+  position: absolute;
+  bottom: 35%;
+  color:rgb(196, 72, 72);
+  letter-spacing: 0.1vw;
   scale: 0;
 }
 /*part-2*/
