@@ -122,11 +122,12 @@ span {
   right: 3.5vw;
   bottom: 2vh;
   font-size: 6vh;
-  color: crimson;
+  color: black;
   text-shadow: 2px 2px 2px black;
   opacity: 0;
   transition: all ease 0.6s;
   cursor: pointer;
+  z-index: 2;
 }
 
 .menu-opts a {
@@ -141,7 +142,7 @@ span {
 .menu-opts a:hover {
   text-decoration: underline;
 }
-/*page-2*/
+/*page-3*/
 #page-2 {
   height: 100vh;
   width: 100vw;
@@ -149,142 +150,121 @@ span {
 }
 
 #page-3 {
-  min-height: 128vh;
+  height: 100vh;
   width: 100vw;
-  padding: 7vh 3vw;
-  background-image: url(assets/p4.avif);
-  background-size: cover;
-  background-position: right;
-  color: black;
-  font-weight: bold;
+  padding: 2vh;
 }
 
 #p3-container {
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: start;
-  min-height: 100%;
+  height: 100%;
   width: 100%;
   padding: 2vw;
 }
-
-#p3-left,
-#p3-right {
-  flex-basis: 50%;
+#p3-left {
+  height: 95%;
+  width: 35vw;
+  border-radius: 1vw;
+  overflow: hidden;
 }
-
-#p3-left h1 {
-  color: whitesmoke;
-  text-align: left;
-  margin-top: 20%;
-  font-size: 10vh;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+#p3-left img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: all ease-in-out 1.5s;
+}
+#p3-left:hover img {
+  scale: 1.2;
 }
 #p3-right {
+  height: 90%;
+  width: 40vw;
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  align-items: start;
-  gap: 1vw;
-}
-#p3-right #festival-sec {
-  height: 9vh;
-  width: 20vw;
-  border: 1px solid black;
-  border-radius: 1vw;
-  padding: 0 4vh;
-  background-size: cover;
-  background-position: center;
-  display: flex;
   justify-content: center;
   align-items: center;
 }
-#festival-sec>h1 a {
+#p3-right div {
+  height: 20vh;
+  width: 30vw;
+  border-radius: 1vw;
+}
+#p3-right div a {
   text-decoration: none;
-  color: #111;
-  font-size: 1.9vw;
+  color: black;
+  font-family: canopee;
+  letter-spacing: 0.5vw;
+  font-size: 3vw;
+  font-weight: 100;
+  color: #333;
 }
 #festival-desc {
-  min-height: 150vh;
+  height: 130vh;
   width: 100vw;
-  padding: 3vw;
+  padding: 5vw;
 }
-#festival-desc h1{
-  height: 20vh;
-  padding-top: 5vh;
-  font-size: 4vw;
+#festival-desc h1 {
   text-align: center;
-  font-family: OSAKE ;
-  color: white;
-  font-weight: 300;
-  background-color: #a61a1a;
-  border-radius:1vw;
+  font-family: OSAKE;
+  font-weight: 400;
+  border-radius: 2vw;
+  margin-bottom: 5vh;
+  font-size: 6vh;
+  background-image: url(assets/red\ paint.png);
+  background-size: cover;
+  background-position: center;
 }
 .fest {
   display: flex;
-  justify-content: space-between;
-  align-items: start;
-  width: 100%;
-  margin-top: 1rem;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+  width: 90vw;
   padding: 5vw;
+  gap: 1vw;
+  border-bottom: 2px solid #dadada;
 }
-#fest-text {
-  width: 50%;
+.fest p {
+  font-size: 1.15vw;
+  text-align: left;
+  width: 50vw;
+  padding: 5vw;
+  color: #222;
 }
-#fest-text p {
-  height: fit-content;
-  padding: 2vw;
-  font-size: 1.8vw;
-  color: #333;
-}
-#fest-text p span {
+.fest p span {
   font-size: 2vw;
   color: #842828;
+  line-height: 2;
 }
-
-#fest-img  {
-  height: 150vh;
-  border: 1px solid black;
+.fest img {
   width: 35vw;
+  height: 25vh;
   object-fit: cover;
-  border-radius: 1vh;
-  overflow-y:auto;
-  overflow-x: hidden;
-  margin-top: 2rem;
+  border-radius: 1vw;
+  object-position: center;
 }
-#fest-img  img {
-  height: 40%;
-  width: 100%;
-  object-fit: cover;
+/*pag4-4*/
+#p4-heading {
+  text-align: center;
+  font-family: canopee;
+  letter-spacing: 0.5vw;
+  font-size: 3vw;
 }
-.img-box {
- animation: moveup 10s linear  infinite;
-}
-@keyframes moveup {
-  0%{
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-100%);
-  }
-}
-
-
 #culture-2 {
   height: 100vh;
   width: 100vw;
-  padding: 2vw;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 #culture-2-container {
   overflow: hidden;
-  padding: 0.5vw;
   height: 80%;
-  width: 72%;
+  width: 70%;
   border-radius: 1vw;
+  padding: 1vw;
   /* box-shadow: 4px 4px 4px 4px rgb(138, 115, 115); */
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -316,7 +296,7 @@ span {
   background-position: center;
   padding-right: 2rem;
   height: 70vh;
-  width: 20vw;
+  width: 19vw;
   transform: translateX(-22px);
 }
 .item:nth-child(1) h1 {
@@ -330,7 +310,7 @@ span {
   grid-area: aside;
   padding: 3rem 1.5rem;
   height: 70vh;
-  width: 20vw;
+  width: 19vw;
 }
 
 .item:nth-child(2) h1 {
@@ -345,7 +325,7 @@ span {
   text-align: left;
   padding: 4rem;
   height: 25vh;
-  width: 28vw;
+  width: 29vw;
 }
 
 .item:nth-child(4) {
@@ -353,7 +333,7 @@ span {
   background: url(assets/onsen10.jpeg);
   background-size: cover;
   background-position: center;
-  height: 44vh;
+  height: 43vh;
   width: 16vw;
 }
 
@@ -367,8 +347,8 @@ span {
   background: url(assets/kabuki2.avif);
   background-size: cover;
   background-position: center;
-  height: 25vh;
-  width: 12vw;
+  height: 23vh;
+  width: 13vw;
 }
 
 .item:nth-child(5) h1 {
@@ -382,9 +362,10 @@ span {
   background: url(assets/anime2.jpeg);
   background-size: cover;
   background-position: center;
-  height: 18vh;
-  width: 12vw;
-  margin-bottom: 1vh;
+  height: 20vh;
+  width: 13vw;
+  transform: translateY(-10px);
+  margin-bottom: 2rem;
 }
 .item:nth-child(6) h1 {
   margin-top: 7vh;
@@ -392,22 +373,19 @@ span {
   text-shadow: 2px 2px 2px black;
 }
 
-/*Page-4 destination*/
+/*Page-5 destination*/
 #Page-4 {
   height: fit-content;
   width: 100vw;
   padding: 2vw;
-  background-size: cover;
-  background-position: center;
 }
 #rediscover {
-  height: 40vh;
+  height: 55vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: start;
   position: relative;
-  cursor: none;
 }
 #rediscover h1 {
   font-size: 6vw;
@@ -422,54 +400,51 @@ span {
   background-color: red;
 }
 #rediscover p {
-  font-size: 1.8vw;
+  font-size: 2.2vw;
   position: absolute;
   bottom: 50%;
-  color:rgb(196, 72, 72);
+  color: rgb(196, 72, 72);
   letter-spacing: 0.1vw;
   scale: 0;
 }
-/*part-2*/
+/*page-5 part-2*/
 #d-container {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  padding: 1.5vw;
-  min-height: fit-content;
+  height: 100vh;
+  width: 100vw;
 }
 #destinations {
-  height: 120vh;
-  width: 60vw;
+  height: 100%;
+  width: 100%;
+  padding: 5vw;
+  flex-wrap: nowrap;
 }
 .elem {
-  height: fit-content;
-  padding: 0.5rem;
+  height: 17vh;
+  width: 55vw;
   position: relative;
   z-index: 2;
   overflow: hidden;
-  transform: translateY(200%);
+  transform: translateY(100%);
   opacity: 0;
+  border-radius: 1vw;
+  padding: 1vw;
+  color: #6b3131;
+  border: 1px solid #6b3131;
+  margin-bottom: 1vh;
 }
 .elem h2 {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  font-size: 2vw;
+  font-size: 2.2vw;
 }
-
-.elem p,
-.elem p > span {
-  margin-top: 0.6rem;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 1.08vw;
-  font-weight: 400;
+.elem p {
+  padding: 1vw 0;
+  transform: translateY(100%);
+  width: 50vw;
 }
-
-.elem-h {
-  cursor: pointer;
-  border-bottom: 1px solid #dadada;
-  padding: 1rem;
+.elem p span {
+  font-size: 1.2vw;
 }
-
-.elem-h #img-hover {
+.elem #img-hover {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -481,7 +456,6 @@ span {
   z-index: -1;
   scale: 0;
 }
-
 #img-hover img {
   height: 100%;
   width: 100%;
@@ -513,4 +487,94 @@ span {
   100% {
     transform: translateY(-100%);
   }
+}
+/*carousal-section-destination-part2*/
+.c-container {
+  height: 60vh;
+  padding: 1.1vw;
+  padding-left: 0;
+}
+.slider-wrapper {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.slider {
+  display: flex;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 100%;
+  width: 100%;
+}
+.slide-1 {
+  display: flex;
+  gap: 2vw;
+  flex: 1 0 100%;
+  scroll-snap-align: start;
+  animation: dscrollx 70s linear infinite;
+}
+@keyframes dscrollx {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-910%);
+  }
+}
+.slider:hover .slide-1 {
+  animation-play-state: paused;
+}
+.slide-img {
+  flex-basis: 80%;
+  padding: 1vw;
+  padding-left: 0;
+}
+.slide-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0 1vw 1vw 0;
+}
+.slide-text {
+  flex-basis: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.09vw;
+}
+.slide-text .text {
+  font-size: 2vw;
+  color: rgb(86, 86, 86);
+  font-family: "Brygada 1918", serif;
+  letter-spacing: -0.01vw;
+}
+.slide-text .line {
+  height: 1px;
+  width: 80%;
+  margin-top: 1.6vw;
+  margin-bottom: 1vw;
+  background-color: rgb(214, 210, 210);
+}
+.slide-text a {
+  text-decoration: none;
+  color: rgb(159, 154, 154);
+  font-family: arial;
+  font-size: 1.1vw;
+}
+.slide-text .place {
+  font-size: 2.3rem;
+  font-family: popping;
+  font-weight: lighter;
+  margin-bottom: 0.9rem;
+}
+.slide-text .info {
+  font-size: 1.4rem;
+  color: grey;
+  font-family: popping;
+}
+.slide-img {
+  position: relative;
 }
