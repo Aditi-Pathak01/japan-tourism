@@ -135,8 +135,8 @@ rediscover.addEventListener("mouseenter", () => {
 });
 rediscover.addEventListener("mousemove", (dets) => {
   gsap.to(rediscover.childNodes[3], {
-    left: dets.x - 50 + "px",
-    top: dets.y - 250 +  "px"
+    left: dets.x - 80 + "px",
+    top: dets.y - 350 +  "px"
   });
 });
 rediscover.addEventListener("mouseleave", () => {
@@ -176,7 +176,7 @@ let throttledMouseMove = throttleFunction((event) => {
   let div = document.createElement("div");
   div.classList.add("img-div");
   div.style.left = event.clientX - 500 + "px";
-  div.style.top = event.clientY - 600 + "px";
+  div.style.top = event.clientY - 650 + "px";
   let randomIndex = Math.floor(Math.random() * imgArr.length);
   let img = document.createElement("img");
   img.src = imgArr[randomIndex].src;
@@ -192,7 +192,7 @@ let throttledMouseMove = throttleFunction((event) => {
     },
   });
 
-}, 250);
+}, 150);
 
 rediscover.childNodes[1].addEventListener("mousemove", throttledMouseMove);
 rediscover.childNodes[1].addEventListener("mouseleave", ()=>{
