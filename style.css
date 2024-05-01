@@ -380,17 +380,12 @@ span {
   padding: 2vw;
 }
 #rediscover {
-  height: 55vh;
+  height: 50vh;
   width: 100vw;
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: center;
   position: relative;
-}
-#rediscover h1 {
-  font-size: 6vw;
-  font-family: Gilroy-SemiBold;
-  z-index: 1;
 }
 #rediscover #crsr {
   position: absolute;
@@ -399,14 +394,28 @@ span {
   border-radius: 50%;
   background-color: red;
 }
-#rediscover p {
-  font-size: 2.2vw;
-  position: absolute;
-  bottom: 50%;
-  color: rgb(196, 72, 72);
-  letter-spacing: 0.1vw;
-  scale: 0;
+#rediscover h1 {
+  font-size: 6vw;
+  font-family: Gilroy-SemiBold;
+  z-index: 2;
+  height: fit-content;
+  width: 50vw;
+  position: relative;
 }
+.img-div {
+  height: 50vh;
+  width: 15vw;
+  position: absolute;
+  overflow: hidden;
+  z-index: -1;
+}
+.img-div img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transform: translateY(100%);
+}
+
 /*page-5 part-2*/
 #d-container {
   height: 100vh;
