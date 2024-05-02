@@ -73,6 +73,11 @@ navScroll.addEventListener("click", () => {
   destination.addEventListener("click", () => {
     destination.setAttribute("href", "#rediscover");
   });
+  let food = navScroll.childNodes[0].childNodes[2];
+  food.addEventListener("click", () => {
+    food.setAttribute("href", "#food");
+  });
+
 });
 //NavOn Scroll Animation :-Mouse leave
 navScroll.addEventListener("mouseleave", () => {
@@ -84,6 +89,28 @@ navScroll.addEventListener("mouseleave", () => {
 });
 
 //page-2 Animation
+let videoSec =  document.querySelector("#video-sec")
+let img = document.querySelector("#video-sec img")
+let video = document.querySelector("#video-sec video")
+videoSec.addEventListener("mousemove",()=>{
+  gsap.to(img,{
+    opacity : 0
+  })
+  gsap.to(video,{
+    opacity : 1
+  })
+  video.play()
+})
+videoSec.addEventListener("mouseleave",()=>{
+  gsap.to(img,{
+    opacity : 1
+  })
+  gsap.to(video,{
+    opacity : 0
+  })
+  video.load()
+})
+
 
 //page3-collage animation
 culture2Items.forEach((item) => {
@@ -126,6 +153,39 @@ let imgArr = [
   {
     src: "https://images.unsplash.com/photo-1624253321171-1be53e12f5f4?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8a3lvdG98ZW58MHx8MHx8fDA%3D",
   },
+  {
+    src: "https://plus.unsplash.com/premium_photo-1661902398022-762e88ff3f82?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Ginza-WAKO_at_night.jpg/1200px-Ginza-WAKO_at_night.jpg",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1580637400709-77d4b4afd10b?q=80&w=2448&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1565096321437-ef15676e528f?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    src : "https://images.unsplash.com/photo-1492571350019-22de08371fd3?q=80&w=2853&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    src : "https://images.unsplash.com/photo-1629725593792-727bbe2255b2?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    src : "https://images.unsplash.com/photo-1626911635167-0b3006fbda39?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    src : "https://images.unsplash.com/photo-1610957386297-3755fa76d011?q=80&w=2835&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+   src : "https://wherewouldyougo.com/wp-content/uploads/2016/12/flower-field-Hokkaido-Japan.jpg"
+  },
+  {
+    src : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfFnBg-7Z-IwnhNKrNkZrYt-wZz8746WtXSq37ndn2XA&s"
+  },
+  {
+    src : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1sLZWtudk_VPUXJknpg1Dejzohzk8DK-hqaSVq-IilVi_Gz1P9rv9CtZM2fRE7WKvMRg&usqp=CAU"
+  }
 ];
 
 rediscover.addEventListener("mouseenter", () => {
@@ -136,7 +196,7 @@ rediscover.addEventListener("mouseenter", () => {
 rediscover.addEventListener("mousemove", (dets) => {
   gsap.to(rediscover.childNodes[3], {
     left: dets.x - 80 + "px",
-    top: dets.y - 260 +  "px"
+    top: dets.y - 100 + "px",
   });
 });
 rediscover.addEventListener("mouseleave", () => {
@@ -176,7 +236,7 @@ let throttledMouseMove = throttleFunction((event) => {
   let div = document.createElement("div");
   div.classList.add("img-div");
   div.style.left = event.clientX - 500 + "px";
-  div.style.top = event.clientY - 650 + "px";
+  div.style.top = event.clientY - 600 + "px";
   let randomIndex = Math.floor(Math.random() * imgArr.length);
   let img = document.createElement("img");
   img.src = imgArr[randomIndex].src;
@@ -191,18 +251,12 @@ let throttledMouseMove = throttleFunction((event) => {
       });
     },
   });
-
-}, 150);
+}, 250);
 
 rediscover.childNodes[1].addEventListener("mousemove", throttledMouseMove);
-rediscover.childNodes[1].addEventListener("mouseleave", ()=>{
-  rediscoverH1.innerHTML = "<h1>Rediscover Japan</h1>"
+rediscover.childNodes[1].addEventListener("mouseleave", () => {
+  rediscoverH1.innerHTML = "<h1>Rediscover Japan</h1>";
 });
-
-
-
-
-
 
 //page4(part-2) animation:-reveal on scroll
 function handlePage3() {
@@ -235,7 +289,7 @@ hoverElems.forEach((elem) => {
 
   elem.addEventListener("mousemove", (dets) => {
     gsap.to(elem.childNodes[5], {
-      x: dets.x - elem.getBoundingClientRect().x + "px",
+      x: elem.getBoundingClientRect().width - 150 + "px",
       y: dets.y - elem.getBoundingClientRect().y - 100 + "px",
     });
     gsap.to(elem, {

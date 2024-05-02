@@ -146,8 +146,73 @@ span {
 #page-2 {
   height: 100vh;
   width: 100vw;
-  padding: 1rem;
+  padding: 2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+#page-2 #video-sec {
+  width: 40%;
+  height: fit-content;
+  border-radius: 1vw;
+  position: relative;
+}
+#video-sec img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+}
+#video-sec video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0;
+}
+#facts {
+  background-color: rgb(159, 37, 37);
+  height: fit-content;
+  width: 30%;
+  padding: 2vw;
+}
+#facts ul {
+  list-style-type:none;
+  text-align: right;
+}
+#facts ul li {
+  font-family: Neue Haas Grotesk Display Pro;
+  font-size: 2.35vw;
+  line-height: 1;
+  letter-spacing: 0.5vw;
+  margin-bottom: 3vh;
+  color: #999;
+}
+/*#fact-small {
+  height: 40%;
+  width: 28%;
+  padding: 1vw;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: black;
+  transform: skew(-8deg);
+  border-radius: 1vw;
+}
+#fact-small div {
+  border: 1px solid #999;
+  height: 15vh;
+  width: 9vw;
+  border-radius: 1vh;
+  padding: 1vh;
+  color: whitesmoke;
+  margin-left: 0.5vw;
+  font-size: 1.5vw;
+  color: #999;
+
+}*/
 
 #page-3 {
   height: 100vh;
@@ -380,7 +445,7 @@ span {
   padding: 2vw;
 }
 #rediscover {
-  height: 50vh;
+  height: 70vh;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -586,4 +651,10 @@ span {
 }
 .slide-img {
   position: relative;
+}
+/*food-section*/
+#food {
+  height: 100vh;
+  width: 100vw;
+  background-color: grey;
 }
