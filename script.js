@@ -77,7 +77,6 @@ navScroll.addEventListener("click", () => {
   food.addEventListener("click", () => {
     food.setAttribute("href", "#food");
   });
-
 });
 //NavOn Scroll Animation :-Mouse leave
 navScroll.addEventListener("mouseleave", () => {
@@ -89,28 +88,27 @@ navScroll.addEventListener("mouseleave", () => {
 });
 
 //page-2 Animation
-let videoSec =  document.querySelector("#video-sec")
-let img = document.querySelector("#video-sec img")
-let video = document.querySelector("#video-sec video")
-videoSec.addEventListener("mousemove",()=>{
-  gsap.to(img,{
-    opacity : 0
-  })
-  gsap.to(video,{
-    opacity : 1
-  })
-  video.play()
-})
-videoSec.addEventListener("mouseleave",()=>{
-  gsap.to(img,{
-    opacity : 1
-  })
-  gsap.to(video,{
-    opacity : 0
-  })
-  video.load()
-})
-
+let videoSec = document.querySelector("#video-sec");
+let img = document.querySelector("#video-sec img");
+let video = document.querySelector("#video-sec video");
+videoSec.addEventListener("mousemove", () => {
+  gsap.to(img, {
+    opacity: 0,
+  });
+  gsap.to(video, {
+    opacity: 1,
+  });
+  video.play();
+});
+videoSec.addEventListener("mouseleave", () => {
+  gsap.to(img, {
+    opacity: 1,
+  });
+  gsap.to(video, {
+    opacity: 0,
+  });
+  video.load();
+});
 
 //page3-collage animation
 culture2Items.forEach((item) => {
@@ -166,26 +164,26 @@ let imgArr = [
     src: "https://images.unsplash.com/photo-1565096321437-ef15676e528f?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    src : "https://images.unsplash.com/photo-1492571350019-22de08371fd3?q=80&w=2853&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    src: "https://images.unsplash.com/photo-1492571350019-22de08371fd3?q=80&w=2853&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    src : "https://images.unsplash.com/photo-1629725593792-727bbe2255b2?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    src: "https://images.unsplash.com/photo-1629725593792-727bbe2255b2?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    src : "https://images.unsplash.com/photo-1626911635167-0b3006fbda39?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    src: "https://images.unsplash.com/photo-1626911635167-0b3006fbda39?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    src : "https://images.unsplash.com/photo-1610957386297-3755fa76d011?q=80&w=2835&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    src: "https://images.unsplash.com/photo-1610957386297-3755fa76d011?q=80&w=2835&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-   src : "https://wherewouldyougo.com/wp-content/uploads/2016/12/flower-field-Hokkaido-Japan.jpg"
+    src: "https://wherewouldyougo.com/wp-content/uploads/2016/12/flower-field-Hokkaido-Japan.jpg",
   },
   {
-    src : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfFnBg-7Z-IwnhNKrNkZrYt-wZz8746WtXSq37ndn2XA&s"
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfFnBg-7Z-IwnhNKrNkZrYt-wZz8746WtXSq37ndn2XA&s",
   },
   {
-    src : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1sLZWtudk_VPUXJknpg1Dejzohzk8DK-hqaSVq-IilVi_Gz1P9rv9CtZM2fRE7WKvMRg&usqp=CAU"
-  }
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1sLZWtudk_VPUXJknpg1Dejzohzk8DK-hqaSVq-IilVi_Gz1P9rv9CtZM2fRE7WKvMRg&usqp=CAU",
+  },
 ];
 
 rediscover.addEventListener("mouseenter", () => {
@@ -196,7 +194,8 @@ rediscover.addEventListener("mouseenter", () => {
 rediscover.addEventListener("mousemove", (dets) => {
   gsap.to(rediscover.childNodes[3], {
     left: dets.x - 80 + "px",
-    top: dets.y - 100 + "px",
+    top: dets.y - 140 + "px",
+    duration: 0.8,
   });
 });
 rediscover.addEventListener("mouseleave", () => {
@@ -244,7 +243,8 @@ let throttledMouseMove = throttleFunction((event) => {
   rediscover.childNodes[1].appendChild(div);
   gsap.to(img, {
     y: 0,
-    duration: 0.8,
+    duration: 1,
+    ease: "back.out(1.7)",
     onComplete: () => {
       gsap.to(img, {
         y: 500,
@@ -259,31 +259,43 @@ rediscover.childNodes[1].addEventListener("mouseleave", () => {
 });
 
 //page4(part-2) animation:-reveal on scroll
-function handlePage3() {
+//do this with scrolltrigger
+/*function handlePage3() {
   for (var i = 0; i < hoverElems.length; i++) {
     let windowH = window.innerHeight;
     let rectTop = hoverElems[i].getBoundingClientRect().y;
-    if (rectTop < windowH - 40) {
+    if (rectTop < windowH - 20) {
       gsap.to(hoverElems[i], {
-        y: 0,
+        x: 0,
         opacity: 1,
-        duration: 1.9,
-        stagger: 1,
+        duration: 1,
+        stagger: 6,
       });
     }
   }
 }
-window.addEventListener("scroll", handlePage3);
+window.addEventListener("scroll", handlePage3);*/
+
+gsap.to(".elem", {
+  x: 0,
+  opacity: 1,
+  duration: 10,
+  stagger: 2,
+  scrollTrigger: {
+    trigger: ".elem",
+    scroller: "body",
+    start: "top 80%",
+    end: "top 20%",
+    scrub: true,
+  },
+});
 
 //page4 (part-2)animation:-cursor on mousemove
 hoverElems.forEach((elem) => {
   elem.addEventListener("mouseenter", () => {
+    console.log();
     gsap.to(elem.childNodes[5], {
-      scale: 1.5,
-    });
-    gsap.to(elem.childNodes[3], {
-      y: 0,
-      duration: 1,
+      scale: 1.2,
     });
   });
 
@@ -293,21 +305,17 @@ hoverElems.forEach((elem) => {
       y: dets.y - elem.getBoundingClientRect().y - 100 + "px",
     });
     gsap.to(elem, {
-      height: "25vh",
+      height: "20vh",
     });
+
   });
 
   elem.addEventListener("mouseleave", () => {
     gsap.to(elem.childNodes[5], {
       scale: 0,
     });
-    gsap.to(elem.childNodes[3], {
-      y: 1000,
-      duration: 1,
-    });
-
     gsap.to(elem, {
-      height: "17vh",
+      height: "12vh",
     });
   });
 });

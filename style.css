@@ -151,25 +151,7 @@ span {
   justify-content: center;
   align-items: center;
 }
-#page-2 #video-sec {
-  width: 40%;
-  height: fit-content;
-  border-radius: 1vw;
-  position: relative;
-}
-#video-sec img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  object-position: center;
-  position: absolute;
-}
-#video-sec video {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  opacity: 0;
-}
+
 #facts {
   background-color: rgb(159, 37, 37);
   height: fit-content;
@@ -466,6 +448,7 @@ span {
   height: fit-content;
   width: 50vw;
   position: relative;
+  padding: 1vw 0;
 }
 .img-div {
   height: 40vh;
@@ -483,40 +466,55 @@ span {
 
 /*page-5 part-2*/
 #d-container {
-  height: 100vh;
-  width: 100vw;
+  height: 80vh;
+  width: 95vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding : 3vh;
+  gap: 3vw;
+  background-color: #842828;
+  margin-inline: 2vw;
+  border-radius: 1vw;
 }
 #destinations {
-  height: 100%;
-  width: 100%;
-  padding: 5vw;
-  flex-wrap: nowrap;
+  height: 80%;
+  width: 42vw;
+  padding: 4vh;
+  background-color: gainsboro;
+  border-radius: 1vw;
+  margin-bottom: 16vh;
 }
 .elem {
-  height: 17vh;
-  width: 55vw;
+  height: 11vh;
+  width: 95%;
   position: relative;
   z-index: 2;
-  overflow: hidden;
-  transform: translateY(100%);
+  transform: translateX(-130%);
   opacity: 0;
-  border-radius: 1vw;
-  padding: 1vw;
+  border-radius: 1vh;
+  padding: 1vh;
   color: #6b3131;
-  border: 1px solid #6b3131;
-  margin-bottom: 1vh;
+  margin-bottom: 2vh;
+  overflow: hidden;
 }
 .elem h2 {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 2.2vw;
+  text-shadow: 1px 1px lightcoral;
 }
-.elem p {
+.elem>p {
   padding: 1vw 0;
-  transform: translateY(100%);
   width: 50vw;
+  font-size: 1vw;
+  transform: translateY(40px);
+  transition: all ease 1.2s;
 }
-.elem p span {
-  font-size: 1.2vw;
+.elem:hover  p {
+    transform: translateY(0);
+}
+.elem p>span {
+    font-size: 1vw;
 }
 .elem #img-hover {
   position: absolute;
@@ -536,6 +534,27 @@ span {
   object-fit: cover;
   object-position: left;
 }
+#d-container #video-sec {
+  width: 30%;
+  height: 70%;
+  margin-top: 20vh;
+  border-radius: 1vw;
+  position: relative;
+  overflow: hidden;
+}
+#video-sec img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+}
+#video-sec video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0;
+}
 
 #infinite-scroll {
   height: 10vh;
@@ -545,7 +564,7 @@ span {
   overflow-x: hidden;
   overflow-y: auto;
 }
-#infinite-scroll::-webkit-scrollbar {
+::-webkit-scrollbar {
   display: none;
 }
 .one {
