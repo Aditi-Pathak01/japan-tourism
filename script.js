@@ -89,19 +89,6 @@ navScroll.addEventListener("mouseleave", () => {
 });
 
 /*//page-2 Animation:-*/
-let centerBox = document.querySelector(".centerBox")
-gsap.from(centerBox,{
-  opacity : 0,
-  duration : 1,
-})
-gsap.to(centerBox,{
-  height : "15vh",
-  duration : 2,
-  repeat : 4,
-  yoyo : true,
-  borderRadius : "50%"
-
-})
 /*let videoSec = document.querySelector("#video-sec");
 let img = document.querySelector("#video-sec img");
 let video = document.querySelector("#video-sec video");

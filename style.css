@@ -146,17 +146,13 @@ span {
 #page-2 {
   height: 100vh;
   width: 100vw;
-  padding: 1vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .centerBox {
- height: 10vh;
- width: 28vw;
- color: gainsboro;
- background-color: #b53737;
- display: flex;
- justify-content: center;
- align-items: center;
- border-radius: 1vw;
+ background-color: black;
+ color: wheat;
 }
 .centerBox p {
   text-align: center;
