@@ -467,48 +467,40 @@ span {
 /*page-5 part-2*/
 #d-container {
   height: 80vh;
-  width: 95vw;
+  width: 75vw;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding : 3vh;
-  gap: 3vw;
-  background-color: #842828;
-  margin-inline: 2vw;
   border-radius: 1vw;
 }
 #destinations {
-  height: 80%;
-  width: 42vw;
-  padding: 4vh;
-  background-color: gainsboro;
-  border-radius: 1vw;
-  margin-bottom: 16vh;
+  height: 75%;
+  width: 40vw;
+  border-right: 4px solid #613b16;
 }
 .elem {
-  height: 11vh;
-  width: 95%;
+  height: 17vh;
+  width: 100%;
   position: relative;
   z-index: 2;
-  transform: translateX(-130%);
-  opacity: 0;
   border-radius: 1vh;
-  padding: 1vh;
-  color: #6b3131;
-  margin-bottom: 2vh;
+  color: lightcoral;
+  margin-bottom: 1vh;
   overflow: hidden;
+  padding: 0 2vh;
+  padding-top: 2vh;
 }
 .elem h2 {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  font-size: 2.2vw;
-  text-shadow: 1px 1px lightcoral;
+  font-size: 1.8vw;
+  text-align: center;
 }
 .elem>p {
-  padding: 1vw 0;
-  width: 50vw;
   font-size: 1vw;
-  transform: translateY(40px);
+  transform: translateY(100px);
   transition: all ease 1.2s;
+  margin-top: 1.5vh;
+  text-align: center;
 }
 .elem:hover  p {
     transform: translateY(0);
@@ -534,6 +526,20 @@ span {
   object-fit: cover;
   object-position: left;
 }
+#d-container .circle {
+  height: 43vh;
+  width: 25vw;
+  border-radius: 50%;
+  overflow: hidden;
+  filter: opacity(0.9);
+  border-right: 4px solid #613b16;
+}
+.circle img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+/*
 #d-container #video-sec {
   width: 30%;
   height: 70%;
@@ -541,6 +547,7 @@ span {
   border-radius: 1vw;
   position: relative;
   overflow: hidden;
+  visibility: hidden;
 }
 #video-sec img {
   height: 100%;
@@ -554,7 +561,7 @@ span {
   width: 100%;
   object-fit: cover;
   opacity: 0;
-}
+}*/
 
 #infinite-scroll {
   height: 10vh;

@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //nav animation
 document.addEventListener("scroll", () => {
-  if (scrollY > 0) {
+  if (scrollY > 100) {
     gsap.to(nav, {
       opacity: 0,
     });
@@ -87,7 +87,7 @@ navScroll.addEventListener("mouseleave", () => {
   navScroll.innerHTML = '<i class="ri-menu-add-line"></i><span>Menu</span>';
 });
 
-//page-2 Animation
+/*//page-2 Animation
 let videoSec = document.querySelector("#video-sec");
 let img = document.querySelector("#video-sec img");
 let video = document.querySelector("#video-sec video");
@@ -108,7 +108,7 @@ videoSec.addEventListener("mouseleave", () => {
     opacity: 0,
   });
   video.load();
-});
+});*/
 
 //page3-collage animation
 culture2Items.forEach((item) => {
@@ -258,39 +258,25 @@ rediscover.childNodes[1].addEventListener("mouseleave", () => {
   rediscoverH1.innerHTML = "<h1>Rediscover Japan</h1>";
 });
 
-//page4(part-2) animation:-reveal on scroll
-//do this with scrolltrigger
-/*function handlePage3() {
-  for (var i = 0; i < hoverElems.length; i++) {
-    let windowH = window.innerHeight;
-    let rectTop = hoverElems[i].getBoundingClientRect().y;
-    if (rectTop < windowH - 20) {
-      gsap.to(hoverElems[i], {
-        x: 0,
-        opacity: 1,
-        duration: 1,
-        stagger: 6,
-      });
-    }
-  }
-}
-window.addEventListener("scroll", handlePage3);*/
 
-gsap.to(".elem", {
-  x: 0,
-  opacity: 1,
-  duration: 10,
-  stagger: 2,
-  scrollTrigger: {
-    trigger: ".elem",
-    scroller: "body",
-    start: "top 80%",
-    end: "top 20%",
-    scrub: true,
-  },
-});
+
 
 //page4 (part-2)animation:-cursor on mousemove
+gsap.from(".elem",{
+  x : -200,
+  opacity : 0,
+  duration : 0.8,
+  stagger : 1, 
+  scrollTrigger : {
+    trigger : ".elem",
+    scroller : "body",
+    start : "top 80%",
+    end : "top 40%",
+  }
+})
+gsap.to(".circle img",{
+  
+})
 hoverElems.forEach((elem) => {
   elem.addEventListener("mouseenter", () => {
     console.log();
@@ -305,9 +291,8 @@ hoverElems.forEach((elem) => {
       y: dets.y - elem.getBoundingClientRect().y - 100 + "px",
     });
     gsap.to(elem, {
-      height: "20vh",
+      height: "22.4vh",
     });
-
   });
 
   elem.addEventListener("mouseleave", () => {
@@ -315,7 +300,8 @@ hoverElems.forEach((elem) => {
       scale: 0,
     });
     gsap.to(elem, {
-      height: "12vh",
+      height: "17vh",
     });
   });
 });
+
