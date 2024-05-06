@@ -8,6 +8,7 @@ let rediscover = document.querySelector("#rediscover");
 let rediscoverH1 = document.querySelector("#rediscover h1");
 let tBox = document.querySelector(".t-box");
 let festivalSec = document.querySelector("#festival-sec");
+let page6 = document.querySelector("#page-5")
 
 //loading animation
 document.addEventListener("DOMContentLoaded", () => {
@@ -56,7 +57,7 @@ backToTop.addEventListener("click", (scrollX) => {
 });
 
 //Nav-On Scroll Animation :-click
-navScroll.addEventListener("click", () => {
+navScroll.addEventListener("mouseenter", () => {
   gsap.to(navScroll, {
     height: "40vh",
     width: "20vw",
@@ -87,8 +88,21 @@ navScroll.addEventListener("mouseleave", () => {
   navScroll.innerHTML = '<i class="ri-menu-add-line"></i><span>Menu</span>';
 });
 
-/*//page-2 Animation
-let videoSec = document.querySelector("#video-sec");
+/*//page-2 Animation:-*/
+let centerBox = document.querySelector(".centerBox")
+gsap.from(centerBox,{
+  opacity : 0,
+  duration : 1,
+})
+gsap.to(centerBox,{
+  height : "15vh",
+  duration : 2,
+  repeat : 4,
+  yoyo : true,
+  borderRadius : "50%"
+
+})
+/*let videoSec = document.querySelector("#video-sec");
 let img = document.querySelector("#video-sec img");
 let video = document.querySelector("#video-sec video");
 videoSec.addEventListener("mousemove", () => {
@@ -110,7 +124,8 @@ videoSec.addEventListener("mouseleave", () => {
   video.load();
 });*/
 
-//page3-collage animation
+
+//page4-collage animation
 culture2Items.forEach((item) => {
   item.addEventListener("mousemove", () => {
     gsap.to(item.childNodes[1], {
@@ -128,7 +143,7 @@ culture2Items.forEach((item) => {
   });
 });
 
-//page4(part-1)animation:-custom curser:-
+//page5:-
 let imgArr = [
   {
     src: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dG9reW98ZW58MHx8MHx8fDA%3D",
@@ -261,11 +276,11 @@ rediscover.childNodes[1].addEventListener("mouseleave", () => {
 
 
 
-//page4 (part-2)animation:-cursor on mousemove
+//page6 animation:-
 gsap.from(".elem",{
   x : -200,
   opacity : 0,
-  duration : 0.8,
+  duration : 0.7,
   stagger : 1, 
   scrollTrigger : {
     trigger : ".elem",
@@ -274,12 +289,9 @@ gsap.from(".elem",{
     end : "top 40%",
   }
 })
-gsap.to(".circle img",{
-  
-})
+
 hoverElems.forEach((elem) => {
   elem.addEventListener("mouseenter", () => {
-    console.log();
     gsap.to(elem.childNodes[5], {
       scale: 1.2,
     });
@@ -304,4 +316,7 @@ hoverElems.forEach((elem) => {
     });
   });
 });
+
+
+
 

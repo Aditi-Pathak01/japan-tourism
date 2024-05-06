@@ -146,30 +146,37 @@ span {
 #page-2 {
   height: 100vh;
   width: 100vw;
-  padding: 2vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 1vw;
+}
+.centerBox {
+ height: 10vh;
+ width: 28vw;
+ color: gainsboro;
+ background-color: #b53737;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ border-radius: 1vw;
+}
+.centerBox p {
+  text-align: center;
+  font-size: 2vw;
+  font-family: Domaine Display Condensed;
 }
 
-#facts {
+
+/*
+.facts {
   background-color: rgb(159, 37, 37);
   height: fit-content;
   width: 30%;
   padding: 2vw;
 }
-#facts ul {
-  list-style-type:none;
-  text-align: right;
-}
-#facts ul li {
+.facts p {
   font-family: Neue Haas Grotesk Display Pro;
-  font-size: 2.35vw;
-  line-height: 1;
-  letter-spacing: 0.5vw;
-  margin-bottom: 3vh;
+  font-size: 2vw;
   color: #999;
-}
+}*/
 /*#fact-small {
   height: 40%;
   width: 28%;
@@ -421,7 +428,7 @@ span {
 }
 
 /*Page-5 destination*/
-#Page-4 {
+#page-4 {
   height: fit-content;
   width: 100vw;
   padding: 2vw;
@@ -464,8 +471,8 @@ span {
   transform: translateY(100%);
 }
 
-/*page-5 part-2*/
-#d-container {
+/*page-5*/
+#page-5 {
   height: 80vh;
   width: 75vw;
   display: flex;
@@ -526,13 +533,14 @@ span {
   object-fit: cover;
   object-position: left;
 }
-#d-container .circle {
-  height: 43vh;
+#page-5 .circle {
+  height: 45vh;
   width: 25vw;
   border-radius: 50%;
   overflow: hidden;
-  filter: opacity(0.9);
+  filter: opacity(0.95);
   border-right: 4px solid #613b16;
+  filter : drop-shadow(2px 2px 2px black);
 }
 .circle img {
   height: 100%;
