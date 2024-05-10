@@ -11,6 +11,7 @@ html,
 body {
   height: 100%;
   width: 100%;
+  background-color: black;
 }
 
 body {
@@ -95,6 +96,8 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 5vw;
+  background-color: black;
 }
 
 #page-1 h1 {
@@ -146,21 +149,56 @@ span {
 #page-2 {
   height: 100vh;
   width: 100vw;
+  padding: 4vw 15vw;
+  color: #333;
+}
+#page-2 .para {
+  font-size: 3vw;
+  margin-bottom: 2vw;
+  text-align: center;
+  color: grey;
+}
+#page-2 #p2-container {
   display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 1vw;
+  height: 90%;
+  width: 98%;
+  padding: 2vw 0;
+}
+#p2left {
+  width: 45%;
+  overflow: hidden;
+  height: 100%;
+}
+.first-elem,
+.last {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.centerBox {
- background-color: black;
- color: wheat;
-}
-.centerBox p {
-  text-align: center;
+.first-elem > h1 {
   font-size: 2vw;
-  font-family: Domaine Display Condensed;
+}
+.last > h1 {
+  margin-left: 2vw;
 }
 
-
+#p2-container #p2right {
+  width: 40%;
+  height: 100%;
+  border-radius: 1vw;
+  overflow: hidden;
+}
+#p2right img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 /*
 .facts {
   background-color: rgb(159, 37, 37);
@@ -202,20 +240,20 @@ span {
 #page-3 {
   height: 100vh;
   width: 100vw;
-  padding: 2vh;
+  background-color: black;
 }
 
 #p3-container {
+  padding: 2vw;
   display: flex;
   justify-content: center;
   align-items: start;
   height: 100%;
   width: 100%;
-  padding: 2vw;
 }
 #p3-left {
-  height: 95%;
-  width: 35vw;
+  height: 80%;
+  width: 30vw;
   border-radius: 1vw;
   overflow: hidden;
 }
@@ -243,12 +281,12 @@ span {
 }
 #p3-right div a {
   text-decoration: none;
-  color: black;
   font-family: canopee;
   letter-spacing: 0.5vw;
   font-size: 3vw;
   font-weight: 100;
-  color: #333;
+  color: grey;
+  letter-spacing: -0.001vw;
 }
 #festival-desc {
   height: 130vh;
@@ -300,9 +338,10 @@ span {
   text-align: center;
   font-family: canopee;
   letter-spacing: 0.5vw;
-  font-size: 3vw;
+  color: grey;
 }
 #culture-2 {
+  overflow: hidden;
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -428,6 +467,7 @@ span {
   height: fit-content;
   width: 100vw;
   padding: 2vw;
+  background-color: white;
 }
 #rediscover {
   height: 70vh;
@@ -498,18 +538,18 @@ span {
   font-size: 1.8vw;
   text-align: center;
 }
-.elem>p {
+.elem > p {
   font-size: 1vw;
   transform: translateY(100px);
   transition: all ease 1.2s;
   margin-top: 1.5vh;
   text-align: center;
 }
-.elem:hover  p {
-    transform: translateY(0);
+.elem:hover p {
+  transform: translateY(0);
 }
-.elem p>span {
-    font-size: 1vw;
+.elem p > span {
+  font-size: 1vw;
 }
 .elem #img-hover {
   position: absolute;
@@ -536,7 +576,7 @@ span {
   overflow: hidden;
   filter: opacity(0.95);
   border-right: 4px solid #613b16;
-  filter : drop-shadow(2px 2px 2px black);
+  filter: drop-shadow(2px 2px 2px black);
 }
 .circle img {
   height: 100%;

@@ -8,7 +8,7 @@ let rediscover = document.querySelector("#rediscover");
 let rediscoverH1 = document.querySelector("#rediscover h1");
 let tBox = document.querySelector(".t-box");
 let festivalSec = document.querySelector("#festival-sec");
-let page6 = document.querySelector("#page-5")
+let page6 = document.querySelector("#page-5");
 
 //loading animation
 document.addEventListener("DOMContentLoaded", () => {
@@ -89,6 +89,32 @@ navScroll.addEventListener("mouseleave", () => {
 });
 
 /*//page-2 Animation:-*/
+
+gsap.to(".first-elem", {
+  scrollTrigger: {
+    trigger: "#page-2",
+    pin: true,
+    start: "top top",
+    end: "bottom bottom",
+    endTrigger: ".last",
+    scrub: 1,
+  },
+  y: "-300%",
+  ease: "slow(0.7,0.7,false)",
+  duration: 2.5,
+});
+
+gsap.from(".para", {
+  y : 70,
+  scrollTrigger : {
+    trigger : ".para",
+    scroller : "body",
+    start : "top 90%",
+    end : "bottom 70%",
+    scrub : 5,
+  }
+});
+
 /*let videoSec = document.querySelector("#video-sec");
 let img = document.querySelector("#video-sec img");
 let video = document.querySelector("#video-sec video");
@@ -110,7 +136,6 @@ videoSec.addEventListener("mouseleave", () => {
   });
   video.load();
 });*/
-
 
 //page4-collage animation
 culture2Items.forEach((item) => {
@@ -260,22 +285,19 @@ rediscover.childNodes[1].addEventListener("mouseleave", () => {
   rediscoverH1.innerHTML = "<h1>Rediscover Japan</h1>";
 });
 
-
-
-
 //page6 animation:-
-gsap.from(".elem",{
-  x : -200,
-  opacity : 0,
-  duration : 0.7,
-  stagger : 1, 
-  scrollTrigger : {
-    trigger : ".elem",
-    scroller : "body",
-    start : "top 80%",
-    end : "top 40%",
-  }
-})
+gsap.from(".elem", {
+  x: -200,
+  opacity: 0,
+  duration: 0.7,
+  stagger: 1,
+  scrollTrigger: {
+    trigger: ".elem",
+    scroller: "body",
+    start: "top 80%",
+    end: "top 40%",
+  },
+});
 
 hoverElems.forEach((elem) => {
   elem.addEventListener("mouseenter", () => {
@@ -303,7 +325,3 @@ hoverElems.forEach((elem) => {
     });
   });
 });
-
-
-
-
