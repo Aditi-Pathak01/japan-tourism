@@ -108,15 +108,15 @@ gsap.from(".para", {
   opacity: 0,
   y: 70,
   scrollTrigger: {
-    trigger: ".para",
+    trigger: "#page-2",
     scroller: "body",
     start: "top 80%",
     end: "bottom 40%",
-    scrub: 3,
+    scrub: 1,
   },
 });
 
-/*Page-4*/
+/*Page-3*/
 let target = document.querySelector("#page-3");
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -125,8 +125,8 @@ const observer = new IntersectionObserver((entries) => {
         y: 10,
         opacity: 0,
         stagger: -1,
-        delay: 0.7,
-        duration: 0.4,
+        delay: 0.4,
+        duration: 0.3,
       });
     }
   });
@@ -173,7 +173,7 @@ culture2Items.forEach((item) => {
   });
 });
 
-//page5:-
+//page5 heading-
 let imgArr = [
   {
     src: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dG9reW98ZW58MHx8MHx8fDA%3D",
@@ -303,7 +303,7 @@ rediscover.childNodes[1].addEventListener("mouseleave", () => {
   rediscoverH1.innerHTML = "<h1>Rediscover Japan</h1>";
 });
 
-//page6 animation:-
+//page5 content animation:-
 gsap.from(".elem", {
   x: -200,
   opacity: 0,
@@ -343,21 +343,21 @@ hoverElems.forEach((elem) => {
     });
   });
 });
-/**FOODSEC*/
+/**page-6 -FOOD section*/
 //heading
 let food = document.querySelector("#food");
 let span = document.querySelectorAll("#food span");
 food.childNodes[1].addEventListener("mouseenter", () => {
   span.forEach((spn) => {
     gsap.to(spn, {
-      rotateY: 360,
-      duration : 1,
+      rotateY: 320,
+      duration: 1,
     });
   });
 });
-//animate when p8 isinthe viewport
-let target8 = food;
-const observer8 = new IntersectionObserver((entries) => {
+//animate when p6 isinthe viewport
+let target6 = food;
+const observer6 = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       for (var i = 0; i < span.length; i++) {
@@ -369,11 +369,7 @@ const observer8 = new IntersectionObserver((entries) => {
             x: -100,
             opacity: 0,
           });
-        }
-      }
-
-      for (var i = 0; i < span.length; i++) {
-        if (i % 2 !== 0) {
+        } else {
           gsap.from(span[i], {
             rotate: 90,
             x: 500,
@@ -386,4 +382,4 @@ const observer8 = new IntersectionObserver((entries) => {
     }
   });
 });
-observer8.observe(target8);
+observer6.observe(target6);

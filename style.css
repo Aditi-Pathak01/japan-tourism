@@ -145,7 +145,7 @@ span {
 .menu-opts a:hover {
   text-decoration: underline;
 }
-/*page-3*/
+/*page-2*/
 #page-2 {
   height: 100vh;
   width: 100vw;
@@ -154,7 +154,7 @@ span {
   background-color: white;
 }
 #page-2 .para {
-  font-size: 3vw;
+  font-size: 2vw;
   margin-bottom: 2vw;
   text-align: center;
   color: grey;
@@ -237,7 +237,7 @@ span {
   color: #999;
 
 }*/
-
+/*page-3*/
 #page-3 {
   height: 100vh;
   width: 100vw;
@@ -417,7 +417,7 @@ span {
   text-shadow: 2px 2px 2px black;
 }
 
-/*Page-5 destination*/
+/*Page-5 heading*/
 #page-4 {
   height: fit-content;
   width: 100vw;
@@ -464,7 +464,7 @@ span {
   transform: translateY(100%);
 }
 
-/*page-5*/
+/*page-5-content*/
 #page-5 {
   height: 95vh;
   width: 75vw;
@@ -564,7 +564,7 @@ span {
   opacity: 0;
 }*/
 
-/*carousal-section-destination-part2*/
+/*carousal-section*/
 .c-container {
   height: 60vh;
   padding: 1.1vw;
@@ -657,7 +657,7 @@ span {
 .slide-img {
   position: relative;
 }
-/*food-section*/
+/*page-6-food-section*/
 #food {
   height: 110vh;
   width: 100vw;
@@ -681,7 +681,7 @@ span {
   display: block;
 }
 #food span:nth-child(4){
-  color : #f2f4f3;
+  color : #48494a;
 }
 #food span:nth-child(4)::after {
   content : "";
@@ -693,7 +693,7 @@ span {
   background-color: #B64B5F;
   border-radius: 50% 0 50% 0;
   z-index: -1;
-  border: 0.6px solid white;
+  border: 0.5px solid white;
   transform: rotateX(40deg);
 }
 
