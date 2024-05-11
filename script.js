@@ -105,15 +105,33 @@ gsap.to(".first-elem", {
 });
 
 gsap.from(".para", {
-  y : 70,
-  scrollTrigger : {
-    trigger : ".para",
-    scroller : "body",
-    start : "top 90%",
-    end : "bottom 70%",
-    scrub : 5,
-  }
+  opacity: 0,
+  y: 70,
+  scrollTrigger: {
+    trigger: ".para",
+    scroller: "body",
+    start: "top 80%",
+    end: "bottom 40%",
+    scrub: 3,
+  },
 });
+
+/*Page-4*/
+let target = document.querySelector("#page-3");
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      gsap.from("#p3-right h1", {
+        y: 10,
+        opacity: 0,
+        stagger: -1,
+        delay: 0.7,
+        duration: 0.4,
+      });
+    }
+  });
+});
+observer.observe(target);
 
 /*let videoSec = document.querySelector("#video-sec");
 let img = document.querySelector("#video-sec img");
@@ -325,3 +343,47 @@ hoverElems.forEach((elem) => {
     });
   });
 });
+/**FOODSEC*/
+//heading
+let food = document.querySelector("#food");
+let span = document.querySelectorAll("#food span");
+food.childNodes[1].addEventListener("mouseenter", () => {
+  span.forEach((spn) => {
+    gsap.to(spn, {
+      rotateY: 360,
+      duration : 1,
+    });
+  });
+});
+//animate when p8 isinthe viewport
+let target8 = food;
+const observer8 = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      for (var i = 0; i < span.length; i++) {
+        if (i % 2 === 0) {
+          gsap.from(span[i], {
+            rotate: 90,
+            delay: 0.5,
+            duration: 1.4,
+            x: -100,
+            opacity: 0,
+          });
+        }
+      }
+
+      for (var i = 0; i < span.length; i++) {
+        if (i % 2 !== 0) {
+          gsap.from(span[i], {
+            rotate: 90,
+            x: 500,
+            delay: 0.5,
+            duration: 1.4,
+            opacity: 0,
+          });
+        }
+      }
+    }
+  });
+});
+observer8.observe(target8);

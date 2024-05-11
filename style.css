@@ -32,7 +32,7 @@ nav {
 
 nav div {
   cursor: pointer;
-  color: #333;
+  color: grey;
   font-family: Osake;
   letter-spacing: 2px;
 }
@@ -125,7 +125,7 @@ span {
   right: 3.5vw;
   bottom: 2vh;
   font-size: 6vh;
-  color: black;
+  color: grey;
   text-shadow: 2px 2px 2px black;
   opacity: 0;
   transition: all ease 0.6s;
@@ -150,7 +150,8 @@ span {
   height: 100vh;
   width: 100vw;
   padding: 4vw 15vw;
-  color: #333;
+  color: grey;
+  background-color: white;
 }
 #page-2 .para {
   font-size: 3vw;
@@ -241,6 +242,7 @@ span {
   height: 100vh;
   width: 100vw;
   background-color: black;
+  padding: 2vw;
 }
 
 #p3-container {
@@ -252,10 +254,11 @@ span {
   width: 100%;
 }
 #p3-left {
-  height: 80%;
+  height: 95%;
   width: 30vw;
   border-radius: 1vw;
   overflow: hidden;
+  border: 2px solid #333;
 }
 #p3-left img {
   height: 100%;
@@ -266,72 +269,22 @@ span {
 #p3-left:hover img {
   scale: 1.2;
 }
+
 #p3-right {
   height: 90%;
   width: 40vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding: 4vw;
 }
 #p3-right div {
-  height: 20vh;
+  height: 17vh;
   width: 30vw;
-  border-radius: 1vw;
 }
-#p3-right div a {
-  text-decoration: none;
-  font-family: canopee;
-  letter-spacing: 0.5vw;
-  font-size: 3vw;
+#p3-right div h1 {
+  font-size: 2.1vw;
   font-weight: 100;
-  color: grey;
+  color: #444;
   letter-spacing: -0.001vw;
-}
-#festival-desc {
-  height: 130vh;
-  width: 100vw;
-  padding: 5vw;
-}
-#festival-desc h1 {
-  text-align: center;
-  font-family: OSAKE;
-  font-weight: 400;
-  border-radius: 2vw;
-  margin-bottom: 5vh;
-  font-size: 6vh;
-  background-image: url(assets/red\ paint.png);
-  background-size: cover;
-  background-position: center;
-}
-.fest {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40vh;
-  width: 90vw;
-  padding: 5vw;
-  gap: 1vw;
-  border-bottom: 2px solid #dadada;
-}
-.fest p {
-  font-size: 1.15vw;
-  text-align: left;
-  width: 50vw;
-  padding: 5vw;
-  color: #222;
-}
-.fest p span {
-  font-size: 2vw;
-  color: #842828;
-  line-height: 2;
-}
-.fest img {
-  width: 35vw;
-  height: 25vh;
-  object-fit: cover;
-  border-radius: 1vw;
-  object-position: center;
+  padding-left: 3vw;
 }
 /*pag4-4*/
 #p4-heading {
@@ -339,6 +292,8 @@ span {
   font-family: canopee;
   letter-spacing: 0.5vw;
   color: grey;
+  background-color: white;
+  padding-top: 8vh;
 }
 #culture-2 {
   overflow: hidden;
@@ -347,6 +302,7 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: white;
 }
 #culture-2-container {
   overflow: hidden;
@@ -365,7 +321,6 @@ span {
 }
 
 .item {
-  border: 2px solid rgb(225, 209, 209);
   border-radius: 1vw;
   color: white;
   font-size: 1.1vw;
@@ -476,6 +431,8 @@ span {
   justify-content: center;
   align-items: center;
   position: relative;
+  background-color: black;
+  border-radius: 6% 10%;
 }
 #rediscover #crsr {
   position: absolute;
@@ -491,7 +448,7 @@ span {
   height: fit-content;
   width: 50vw;
   position: relative;
-  padding: 1vw 0;
+  color: white;
 }
 .img-div {
   height: 40vh;
@@ -509,7 +466,7 @@ span {
 
 /*page-5*/
 #page-5 {
-  height: 80vh;
+  height: 95vh;
   width: 75vw;
   display: flex;
   justify-content: center;
@@ -607,31 +564,7 @@ span {
   opacity: 0;
 }*/
 
-#infinite-scroll {
-  height: 10vh;
-  padding: 1vw;
-  color: wheat;
-  border: 1px solid black;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-::-webkit-scrollbar {
-  display: none;
-}
-.one {
-  animation: scrollY 3s linear infinite;
-}
-@keyframes scrollY {
-  0% {
-    transform: translateY(0%);
-  }
-  50% {
-    transform: translateY(-50%);
-  }
-  100% {
-    transform: translateY(-100%);
-  }
-}
+
 /*carousal-section-destination-part2*/
 .c-container {
   height: 60vh;
@@ -724,7 +657,49 @@ span {
 }
 /*food-section*/
 #food {
-  height: 100vh;
+  height: 110vh;
   width: 100vw;
-  background-color: grey;
+  padding: 3vh 6vw;
+  background-color: lightcoral;
+  display: flex;
 }
+#food h1 {
+  width: 10%;
+  height: 100%;
+  font-weight: 100;
+}
+#food span {
+  height: 11%;
+  width: 8vw;
+  font-size: 5.2vw;
+  color: #333;
+  display: block;
+}
+
+#infinite-scroll {
+  width: 5vw;
+  height: 10vh;
+  padding: 1vw;
+  color: wheat;
+  border: 1px solid black;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.one {
+  animation: scrollY 3s linear infinite;
+}
+@keyframes scrollY {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
