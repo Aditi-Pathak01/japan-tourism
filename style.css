@@ -112,7 +112,7 @@ span {
 #page-1 h1 > span {
   letter-spacing: 8px;
   font-size: 5vw;
-  color: #111;
+  color: #f2f4f3;
   transform: translateY(100px);
   transition: all ease 1s;
   background: url(assets/red\ paint.png);
@@ -564,7 +564,6 @@ span {
   opacity: 0;
 }*/
 
-
 /*carousal-section-destination-part2*/
 .c-container {
   height: 60vh;
@@ -584,6 +583,9 @@ span {
   overflow-y: hidden;
   height: 100%;
   width: 100%;
+}
+::-webkit-scrollbar {
+  display: none;
 }
 .slide-1 {
   display: flex;
@@ -659,47 +661,48 @@ span {
 #food {
   height: 110vh;
   width: 100vw;
-  padding: 3vh 6vw;
+  padding: 8vh 6vw;
   background-color: lightcoral;
   display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
 }
 #food h1 {
   width: 10%;
   height: 100%;
   font-weight: 100;
+  font-style: italic;
 }
 #food span {
-  height: 11%;
+  height: 10.4%;
   width: 8vw;
-  font-size: 5.2vw;
-  color: #333;
+  font-size: 5.1vw;
+  color : #22223b;
   display: block;
 }
-
-#infinite-scroll {
-  width: 5vw;
-  height: 10vh;
-  padding: 1vw;
-  color: wheat;
-  border: 1px solid black;
-  overflow-x: hidden;
-  overflow-y: auto;
+#food span:nth-child(4){
+  color : #f2f4f3;
 }
-::-webkit-scrollbar {
-  display: none;
-}
-.one {
-  animation: scrollY 3s linear infinite;
-}
-@keyframes scrollY {
-  0% {
-    transform: translateY(0%);
-  }
-  50% {
-    transform: translateY(-50%);
-  }
-  100% {
-    transform: translateY(-100%);
-  }
+#food span:nth-child(4)::after {
+  content : "";
+  position : absolute;
+  top: -10%;
+  right: 40%;
+  height: 4vh;
+  width: 2vw;
+  background-color: #B64B5F;
+  border-radius: 50% 0 50% 0;
+  z-index: -1;
+  border: 0.6px solid white;
+  transform: rotateX(40deg);
 }
 
+#f-middle {
+  height: 85%;
+  border-radius: 1vh;
+  overflow: hidden;
+}
+#f-middle img{
+  height: 100%;
+  width: 100%;
+}
