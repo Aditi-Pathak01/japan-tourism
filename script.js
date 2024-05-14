@@ -353,34 +353,58 @@ const observer6 = new IntersectionObserver((entries) => {
         if (i % 2 === 0) {
           gsap.from(span[i], {
             rotate: 90,
-            delay: 0.5,
-            duration: 0.9,
+            delay: 0.8,
+            duration: 0.7,
             x: -100,
             opacity: 0,
+          });
+          gsap.to("#f-mid .circle", {
+            scale: 1,
+            duration: 0.6,
+            delay: 1.5,
+          });
+          gsap.to("#f-right img", {
+            scale: 1,
+            duration: 1,
+            delay: 2,
           });
         } else {
           gsap.from(span[i], {
             rotate: 90,
             x: 500,
-            delay: 0.5,
-            duration: 0.9,
+            delay: 0.8,
+            duration: 0.7,
             opacity: 0,
+          });
+          gsap.to("#f-mid .circle", {
+            scale: 0,
+          });
+          gsap.to("#f-right img", {
+            scale: 0,
           });
         }
       }
-      gsap.from("#f-mid .circle", {
-        opacity: 0,
-        scale: 0,
-        y: 10,
-        delay: 1.2,
-        duration: 1,
-      });
-      gsap.from("#f-right", {
-        scale :0,
-        duration : 1.2,
-        delay : 1.8,
-      });
     }
   });
 });
 observer6.observe(target6);
+
+//animate when food2 isinthe viewport
+let target7 = document.querySelector("#food-2");
+let int;
+const observer7 = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    let tl = gsap.timeline();
+    if (entry.isIntersecting) {
+      tl.from("#f2-left", {
+        opacity: 0,
+        scale: 0,
+      });
+      tl.from("#food-2 #f2-mid", {
+        opacity: 0,
+        scale: 0,
+      });
+    }
+  });
+});
+observer7.observe(target7);

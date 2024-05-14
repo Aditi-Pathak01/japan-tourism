@@ -659,7 +659,7 @@ span {
 }
 /*page-6-food-section*/
 #food {
-  margin-top: 5vw;
+  margin-top: 10vh;
   height: 110vh;
   width: 100vw;
   padding: 8vh 5vw;
@@ -687,7 +687,7 @@ span {
   display: block;
 }
 #food span:nth-child(4) {
-  color: #333;
+  color: crimson;
 }
 #food span:nth-child(4)::after {
   content: "";
@@ -696,7 +696,7 @@ span {
   right: 10%;
   height: 4vh;
   width: 2vw;
-  background-color: indianred;
+  background-color: crimson;
   border-radius: 50% 0 50% 0;
   z-index: -1;
   border: 0.5px solid white;
@@ -705,7 +705,7 @@ span {
 
 #food #f-mid {
   width: 10%;
-  height: 80;
+  height: 75vh;
 }
 
 #f-mid .circle {
@@ -713,10 +713,11 @@ span {
   width: 6vw;
   border-radius: 50%;
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   box-shadow: 4px 4px 4px #000000;
   border: 0.4px solid white;
   margin-bottom: 0.8vh;
+  scale: 0;
 }
 
 #f-mid .circle:nth-child(6) {
@@ -743,25 +744,57 @@ span {
   height: 70%;
   border-radius: 1vh;
   overflow: hidden;
-  border: 1px solid white;
 }
 
 #f-right img {
   height: 100%;
   width: 100%;
+  scale: 0;
 }
-/*nightlife*/
+/*food2*/
 #food-2 {
   height: 100vh;
   width: 100vw;
-  padding: 5vh 3vw;
+  padding: 5vh 5vw;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
+  align-items: start;
+  background-image: url(assets/f2.avif);
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
 }
 #food-2 div {
-  width: 50%;
-  height: 100%;
   padding: 5vh 3vw;
+  border-radius: 3vh;
+  overflow: hidden;
 }
+#food-2 div:nth-child(1) {
+  width: 30%;
+  height: 60%;
+  z-index: 5;
+  background: linear-gradient(to right, transparent, rgb(124, 118, 118));
+  border: 1px solid wheat;
+  backdrop-filter: blur(2px);
+}
+
+#food-2 div:nth-child(1) p {
+  height: 8vh;
+  margin: 2vh;
+  font-size: 1.8vw;
+  font-weight: lighter;
+  text-align: right;
+}
+#food-2 div:nth-child(2) {
+  height: 100%;
+  width: 35%;
+  object-fit: cover;
+  border-radius: 3vh;
+}
+
+#food-2 div:nth-child(2) img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 3vh;
+}
+
