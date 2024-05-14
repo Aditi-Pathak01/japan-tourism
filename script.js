@@ -399,10 +399,15 @@ const observer7 = new IntersectionObserver((entries) => {
       tl.from("#f2-left", {
         opacity: 0,
         scale: 0,
+        delay : 0.5,
       });
       tl.from("#food-2 #f2-mid", {
         opacity: 0,
         scale: 0,
+      });
+      tl.to("#food-2 p", {
+        y : -10,
+        stagger : 1,
       });
     }
   });

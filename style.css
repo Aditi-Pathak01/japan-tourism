@@ -757,38 +757,37 @@ span {
   width: 100vw;
   padding: 5vh 5vw;
   display: flex;
-  align-items: start;
+  align-items: center;
+  gap: 1vw;
   background-image: url(assets/f2.avif);
   background-size: contain;
   background-position: right;
   background-repeat: no-repeat;
-}
-#food-2 div {
-  padding: 5vh 3vw;
-  border-radius: 3vh;
-  overflow: hidden;
+  margin-top: 10vh;
+  background-color: white;
 }
 #food-2 div:nth-child(1) {
-  width: 30%;
-  height: 60%;
-  z-index: 5;
   background: linear-gradient(to right, transparent, rgb(124, 118, 118));
-  border: 1px solid wheat;
   backdrop-filter: blur(2px);
+  border: 1px solid black;
+  box-shadow: 5px 5px 10px black;
+  height: 75%;
+  width: 30%;
+  padding: 5vh 3vw;
+  border-radius: 3vh;
 }
-
 #food-2 div:nth-child(1) p {
   height: 8vh;
-  margin: 2vh;
-  font-size: 1.8vw;
+  margin: 3vh 0;
+  font-size: 1.5vw;
   font-weight: lighter;
   text-align: right;
+  color: #000;
 }
 #food-2 div:nth-child(2) {
-  height: 100%;
-  width: 35%;
-  object-fit: cover;
   border-radius: 3vh;
+  height: 76%;
+  width: 28%;
 }
 
 #food-2 div:nth-child(2) img {
