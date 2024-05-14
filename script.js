@@ -63,7 +63,7 @@ navScroll.addEventListener("mouseenter", () => {
     width: "20vw",
   });
   let clutter =
-    "<div class=menu-opts><a>Culture</a><a>Destination</a><a>Food</a><a>NightLife</a><a>Accomodation</a></div>";
+    "<div class=menu-opts><a>Culture</a><a>Destination</a><a>Food</a><a>NightLife</a></div>";
   navScroll.innerHTML = clutter;
 
   let culture = navScroll.childNodes[0].childNodes[0];
@@ -102,18 +102,6 @@ gsap.to(".first-elem", {
   y: "-300%",
   ease: "slow(0.7,0.7,false)",
   duration: 2.5,
-});
-
-gsap.from(".para", {
-  opacity: 0,
-  y: 70,
-  scrollTrigger: {
-    trigger: "#page-2",
-    scroller: "body",
-    start: "top 80%",
-    end: "bottom 40%",
-    scrub: 1,
-  },
 });
 
 /*Page-3*/
@@ -347,7 +335,7 @@ hoverElems.forEach((elem) => {
 //heading
 let food = document.querySelector("#food");
 let span = document.querySelectorAll("#food span");
-food.childNodes[1].addEventListener("mouseenter", () => {
+food.childNodes[3].addEventListener("mouseenter", () => {
   span.forEach((spn) => {
     gsap.to(spn, {
       rotateY: 320,
@@ -356,6 +344,7 @@ food.childNodes[1].addEventListener("mouseenter", () => {
   });
 });
 //animate when p6 isinthe viewport
+
 let target6 = food;
 const observer6 = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -365,7 +354,7 @@ const observer6 = new IntersectionObserver((entries) => {
           gsap.from(span[i], {
             rotate: 90,
             delay: 0.5,
-            duration: 1.4,
+            duration: 0.9,
             x: -100,
             opacity: 0,
           });
@@ -374,11 +363,23 @@ const observer6 = new IntersectionObserver((entries) => {
             rotate: 90,
             x: 500,
             delay: 0.5,
-            duration: 1.4,
+            duration: 0.9,
             opacity: 0,
           });
         }
       }
+      gsap.from("#f-mid .circle", {
+        opacity: 0,
+        scale: 0,
+        y: 10,
+        delay: 1.2,
+        duration: 1,
+      });
+      gsap.from("#f-right", {
+        scale :0,
+        duration : 1.2,
+        delay : 1.8,
+      });
     }
   });
 });

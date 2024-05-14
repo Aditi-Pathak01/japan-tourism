@@ -659,50 +659,109 @@ span {
 }
 /*page-6-food-section*/
 #food {
+  margin-top: 5vw;
   height: 110vh;
   width: 100vw;
-  padding: 8vh 6vw;
-  background-color: lightcoral;
+  padding: 8vh 5vw;
   display: flex;
   justify-content: flex-end;
-  align-items: flex-start;
+  align-items: center;
+  gap: 1vw;
+  background-image: url(assets/jfbg7.jpeg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: wheat;
 }
+
 #food h1 {
   width: 10%;
-  height: 100%;
+  height: fit-content;
   font-weight: 100;
   font-style: italic;
 }
 #food span {
-  height: 10.4%;
-  width: 8vw;
+  text-align: center;
+  height: 10vh;
   font-size: 5.1vw;
-  color : #22223b;
+  color: #333;
   display: block;
 }
-#food span:nth-child(4){
-  color : #48494a;
+#food span:nth-child(4) {
+  color: #333;
 }
 #food span:nth-child(4)::after {
-  content : "";
-  position : absolute;
+  content: "";
+  position: absolute;
   top: -10%;
-  right: 40%;
+  right: 10%;
   height: 4vh;
   width: 2vw;
-  background-color: #B64B5F;
+  background-color: indianred;
   border-radius: 50% 0 50% 0;
   z-index: -1;
   border: 0.5px solid white;
   transform: rotateX(40deg);
 }
 
-#f-middle {
-  height: 85%;
+#food #f-mid {
+  width: 10%;
+  height: 80;
+}
+
+#f-mid .circle {
+  height: 12vh;
+  width: 6vw;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 4px 4px 4px #000000;
+  border: 0.4px solid white;
+  margin-bottom: 0.8vh;
+}
+
+#f-mid .circle:nth-child(6) {
+  background-image: url(assets/jf24.jpeg);
+}
+#f-mid .circle:nth-child(2) {
+  background-image: url(assets/jf20.jpeg);
+}
+#f-mid .circle:nth-child(1) {
+  background-image: url(assets/s2.jpeg);
+}
+#f-mid .circle:nth-child(4) {
+  background-image: url(assets/jfoodbest.jpeg);
+}
+#f-mid .circle:nth-child(5) {
+  background-image: url(assets/jf3.jpeg);
+}
+
+#f-mid .circle:nth-child(3) {
+  background-image: url(assets/jf8.avif);
+}
+
+#f-right {
+  height: 70%;
   border-radius: 1vh;
   overflow: hidden;
+  border: 1px solid white;
 }
-#f-middle img{
+
+#f-right img {
   height: 100%;
   width: 100%;
+}
+/*nightlife*/
+#food-2 {
+  height: 100vh;
+  width: 100vw;
+  padding: 5vh 3vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+#food-2 div {
+  width: 50%;
+  height: 100%;
+  padding: 5vh 3vw;
 }
