@@ -427,11 +427,11 @@ const observerN = new IntersectionObserver((entries) => {
         backgroundPosition : "60% 90%"
       });
       tl.from("#n-mid",{
-        scaleY :0,
+        scale :0,
         duration :1,
       })
       tl.to(vScroll, {
-        duration: 1.2,
+        duration: 0.8,
         y: -400,
         delay : 0.2,
         repeat: 1,
