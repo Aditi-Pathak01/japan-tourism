@@ -10,14 +10,14 @@
 html,
 body {
   height: 100%;
-  width: 100%;
-  background-color: black;
+  width:  100%;
 }
 
 body {
   position: relative;
+  overflow-x: hidden;
+  background-color: wheat;
 }
-
 /*page-1*/
 nav {
   display: flex;
@@ -87,7 +87,7 @@ span {
 
 #page-1 {
   height: 100vh;
-  width: 100vw;
+  width: 102vw;
   background: url(assets/bg2.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -96,7 +96,6 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 5vw;
   background-color: black;
 }
 
@@ -148,7 +147,7 @@ span {
 /*page-2*/
 #page-2 {
   height: 100vh;
-  width: 100vw;
+  width: 102vw;
   padding: 4vw 15vw;
   color: grey;
   background-color: white;
@@ -240,7 +239,7 @@ span {
 /*page-3*/
 #page-3 {
   height: 100vh;
-  width: 100vw;
+  width: 102vw;
   background-color: black;
   padding: 2vw;
 }
@@ -294,11 +293,12 @@ span {
   color: grey;
   background-color: white;
   padding-top: 8vh;
+  width: 102vw;
 }
 #culture-2 {
   overflow: hidden;
   height: 100vh;
-  width: 100vw;
+  width: 102vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -340,7 +340,7 @@ span {
   background-position: center;
   padding-right: 2rem;
   height: 70vh;
-  width: 19vw;
+  width: 19.5vw;
   transform: translateX(-22px);
 }
 .item:nth-child(1) h1 {
@@ -420,19 +420,18 @@ span {
 /*Page-5 heading*/
 #page-4 {
   height: fit-content;
-  width: 100vw;
-  padding: 2vw;
+  width: 102vw;
+  padding: 1vw 0;
   background-color: white;
 }
 #rediscover {
   height: 70vh;
-  width: 100vw;
+  width: 102vw;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   background-color: black;
-  border-radius: 6% 10%;
 }
 #rediscover #crsr {
   position: absolute;
@@ -567,8 +566,10 @@ span {
 /*carousal-section*/
 .c-container {
   height: 60vh;
+  width: 102vw;
   padding: 1.1vw;
   padding-left: 0;
+  background-color: black;
 }
 .slider-wrapper {
   height: 100%;
@@ -764,7 +765,7 @@ span {
   background-position: right;
   background-repeat: no-repeat;
   margin-top: 10vh;
-  background-color: white;
+  background-color: wheat;
 }
 #food-2 div:nth-child(1) {
   background: linear-gradient(to right, transparent, rgb(124, 118, 118));
@@ -779,9 +780,9 @@ span {
 #food-2 div:nth-child(1) p {
   height: 8vh;
   margin: 3vh 0;
-  font-size: 1.5vw;
+  font-size: 1.8vw;
   font-weight: lighter;
-  text-align: right;
+  text-align: center;
   color: #000;
 }
 #food-2 div:nth-child(2) {
@@ -797,3 +798,82 @@ span {
   border-radius: 3vh;
 }
 
+#nightlife {
+  height: 100vh;
+  width: 102vw;
+  margin-top: 4vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2vw;
+  padding: 5vh 5vw;
+  background: url(assets/bestbg.avif);
+  background-position: bottom;
+  background-size: cover;
+  margin-top: 5vw;
+}
+#n-left,
+#n-right,
+#n-mid {
+  width: 30%;
+  height: 100%;
+  padding: 5vh 3vw;
+}
+#n-left,#n-right {
+  color: white;
+  border-radius: 2vh;
+}
+#n-mid {
+  width: 28%;
+  position: relative;
+}
+#n-mid #v-scroll {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-inline: 8px solid black;
+}
+#vs-container {
+  height: 100%;
+  width: 100%;
+}
+#vs-container #gradient-top {
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  background: linear-gradient(to bottom, rgb(8, 8, 8), transparent);
+  height: 20vh;
+  width: 80%;
+  z-index: 2;
+}
+#vs-container #gradient-bottom {
+  position: absolute;
+  bottom: 5%;
+  left: 10%;
+  background: linear-gradient(to top, rgb(0, 0, 0), transparent);
+  height: 20vh;
+  width: 80%;
+}
+
+.one {
+  height: 100%;
+  width: 100%;
+}
+
+.one div {
+  height: 42vh;
+  width: 100%;
+  border-bottom: 4px solid rgb(6, 6, 6);
+  background-size: cover;
+  background-position: bottom;
+}
+.one div:nth-child(1) {
+  background-image: url(assets/japanthings\ to\ do.avif);
+}
+.one div:nth-child(2) {
+  background-image: url(assets/p8.avif);
+}
+.one div:nth-child(3) {
+  background-image: url(assets/tokyo.avif);
+}

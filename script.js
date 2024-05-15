@@ -353,7 +353,7 @@ const observer6 = new IntersectionObserver((entries) => {
         if (i % 2 === 0) {
           gsap.from(span[i], {
             rotate: 90,
-            delay: 0.8,
+            delay: 0.5,
             duration: 0.7,
             x: -100,
             opacity: 0,
@@ -365,7 +365,7 @@ const observer6 = new IntersectionObserver((entries) => {
           });
           gsap.to("#f-right img", {
             scale: 1,
-            duration: 1,
+            duration: 0.8,
             delay: 2,
           });
         } else {
@@ -399,17 +399,55 @@ const observer7 = new IntersectionObserver((entries) => {
       tl.from("#f2-left", {
         opacity: 0,
         scale: 0,
-        delay : 0.5,
+        delay: 0.5,
       });
-      tl.from("#food-2 #f2-mid", {
-        opacity: 0,
-        scale: 0,
-      });
+
       tl.to("#food-2 p", {
-        y : -10,
-        stagger : 1,
+        duration: 2.5,
+        ease: "elastic.out(1,0.3)",
+        y: -10,
+        stagger: 1,
       });
     }
   });
 });
 observer7.observe(target7);
+/*NIGHTLIFE P-1 */
+let targetN = document.querySelector("#nightlife");
+let vScroll = document.querySelector("#nightlife .one");
+
+const observerN = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    let tl = gsap.timeline();
+    if (entry.isIntersecting) {
+      tl.from(targetN, {
+        opacity: 0,
+        height: 0,
+        duration: 1,
+        backgroundPosition : "50% 80%"
+      });
+      tl.to(vScroll, {
+        duration: 1.2,
+        ease: "Power4.in",
+        y: -400,
+        repeat: 1,
+        yoyo: true,
+      });
+      tl.from("#n-left p", {
+        opacity : 0,
+        scaleY : 0,
+        y: 200,
+        duration : 0.9,
+      });
+      tl.from("#n-right p", {
+        opacity : 0,
+        scaleY : 0,
+        y: 200,
+        duration : 0.9,
+      });
+    } else {
+      tl.reverse()
+    }
+  });
+});
+observerN.observe(targetN);
