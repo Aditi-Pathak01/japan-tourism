@@ -423,15 +423,15 @@ const observerN = new IntersectionObserver((entries) => {
       tl.from(targetN, {
         opacity: 0,
         height: 0,
-        duration: 1.3,
-        backgroundPosition : "60% 90%"
+        backgroundPosition : "-40% -60%",
+        duration: 1.8,
       });
       tl.from("#n-mid",{
         scale :0,
         duration :1,
       })
       tl.to(vScroll, {
-        duration: 0.8,
+        duration: 1,
         y: -400,
         delay : 0.2,
         repeat: 1,
@@ -439,6 +439,7 @@ const observerN = new IntersectionObserver((entries) => {
         ease: "Power2.in",
       });
       tl.from("#n-left p", {
+        delay : 0.1,
         opacity : 0,
         scaleY : 0,
         y: 200,

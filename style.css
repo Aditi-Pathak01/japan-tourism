@@ -808,9 +808,10 @@ span {
   gap: 2vw;
   padding: 5vh 5vw;
   background: url(assets/bestbg.avif);
-  background-position: bottom;
+  background-position: center;
   background-size: cover;
   margin-top: 5vw;
+  background-repeat: no-repeat;
 }
 #n-left,
 #n-right,
