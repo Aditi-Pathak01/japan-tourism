@@ -423,15 +423,20 @@ const observerN = new IntersectionObserver((entries) => {
       tl.from(targetN, {
         opacity: 0,
         height: 0,
-        duration: 1,
-        backgroundPosition : "50% 80%"
+        duration: 1.3,
+        backgroundPosition : "60% 90%"
       });
+      tl.from("#n-mid",{
+        scaleY :0,
+        duration :1,
+      })
       tl.to(vScroll, {
         duration: 1.2,
-        ease: "Power4.in",
         y: -400,
+        delay : 0.2,
         repeat: 1,
         yoyo: true,
+        ease: "Power2.in",
       });
       tl.from("#n-left p", {
         opacity : 0,
