@@ -442,13 +442,13 @@ const observerN = new IntersectionObserver((entries) => {
         opacity : 0,
         scaleY : 0,
         y: 200,
-        duration : 0.9,
+        duration : 1,
       });
       tl.from("#n-right p", {
         opacity : 0,
         scaleY : 0,
         y: 200,
-        duration : 0.9,
+        duration : 1,
       });
     } else {
       tl.reverse()
