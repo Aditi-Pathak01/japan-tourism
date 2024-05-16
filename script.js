@@ -427,11 +427,8 @@ letters.forEach((elem, idx) => {
 });
 nlH1.innerHTML = clutter;
 
-
-
 let targetN = document.querySelector("#nightlife");
 let vScroll = document.querySelector("#nightlife .one");
-
 
 const observerN = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -442,14 +439,14 @@ const observerN = new IntersectionObserver((entries) => {
         stagger: 0.15,
         ease: "Power2.in",
         duration: 0.5,
-        delay : 1,
+        delay: 1,
       });
       gsap.from("#n-left .right", {
         y: 70,
         stagger: -0.15,
         ease: "Power2.in",
         duration: 0.5,
-        delay:1,
+        delay: 1,
       });
       tl.from(targetN, {
         opacity: 0,
@@ -457,41 +454,36 @@ const observerN = new IntersectionObserver((entries) => {
         backgroundPosition: "-40% -60%",
         duration: 1.5,
         ease: "expoScale(0.5,7,none)",
+        onComplete: function () {
+          gsap.to(vScroll, {
+            y: -400,
+            duration : 0.9,
+            repeat: 1,
+            yoyo: true,
+            ease: "Power2.in",
+          });
+        },
       });
- 
       tl.from("#n-mid", {
         scale: 0,
         duration: 1,
+        rotate : 180,
       });
-      tl.to(vScroll, {
-        duration: 0.8,
-        y: -400,
-        delay: 0.5,
-        repeat: 1,
-        yoyo: true,
-        ease: "Power2.in",
+      tl.from("#n-right p", {
+        delay : 0.8,
+        opacity: 0,
+        scale: 0,
+        y: 100,
+        duration: 0.7,
       });
       tl.from("#n-left p", {
         opacity: 0,
-        scaleY: 0,
-        y: 200,
-        duration: 0.8,
-      });
-
-      tl.from("#n-right p", {
-        opacity: 0,
-        scaleY: 0,
-        y: 200,
-        duration: 0.8,
+        scale: 0,
+        y: 100,
+        duration: 0.7,
       });
     } else {
       tl.reverse();
-      gsap.to("#n-left .left", {
-        y: -7,
-      });
-      gsap.to("#n-left .right", {
-        y: -7,
-      });
     }
   });
 });

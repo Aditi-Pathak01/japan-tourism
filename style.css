@@ -821,7 +821,8 @@ span {
   padding: 5vh 3vw;
 }
 
-#n-left,#n-right {
+#n-left,
+#n-right {
   display: flex;
   flex-direction: column;
   justify-content: end;
@@ -831,34 +832,18 @@ span {
 #n-left h1 {
   overflow: hidden;
   color: ivory;
-  width: 21vw;
-  text-align: center;
 }
 #n-left h1 span {
   display: inline-block;
   font-size: 5vw;
   transform: translateY(-7px);
 }
-#n-left h1 span:nth-child(5){
-  color: red;
-}
-
 #n-left p {
-  font-size: 1vw;
+  font-size: 1.25vw;
   font-style: oblique;
-  text-align: center;
-  padding: 0 10vh;
   color: wheat;
 }
 
-#n-right p {
-  font-size: 1vw;
-  font-style: oblique;
-  text-align: center;
-  color: wheat;
-  padding: 0 5vh;
-  line-height: 1.1;
-}
 #n-mid {
   width: 28%;
   position: relative;
@@ -912,4 +897,16 @@ span {
 }
 .one div:nth-child(3) {
   background-image: url(assets/tokyo.avif);
+}
+#n-right {
+  transform: translateX(-5%);
+}
+
+#n-right p {
+  font-size: 1vw;
+  font-style: oblique;
+  color: wheat;
+  line-height: 1;
+  text-align: center;
+  padding: 1vh 2vw;
 }
