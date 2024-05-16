@@ -467,7 +467,6 @@ const observerN = new IntersectionObserver((entries) => {
       tl.from("#n-mid", {
         scale: 0,
         duration: 1,
-        rotate : 180,
       });
       tl.from("#n-right p", {
         delay : 0.8,
