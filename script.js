@@ -413,47 +413,87 @@ const observer7 = new IntersectionObserver((entries) => {
 });
 observer7.observe(target7);
 /*NIGHTLIFE P-1 */
+let nlH1 = document.querySelector("#n-left h1");
+let nlH1Text = nlH1.textContent;
+let letters = nlH1Text.split("");
+let clutter = "";
+let halfVal = Math.floor(letters.length / 2);
+letters.forEach((elem, idx) => {
+  if (idx < halfVal) {
+    clutter += `<span class="left">${elem}</span>`;
+  } else {
+    clutter += `<span class="right">${elem}</span>`;
+  }
+});
+nlH1.innerHTML = clutter;
+
+
+
 let targetN = document.querySelector("#nightlife");
 let vScroll = document.querySelector("#nightlife .one");
+
 
 const observerN = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     let tl = gsap.timeline();
     if (entry.isIntersecting) {
+      gsap.from("#n-left .left", {
+        y: 70,
+        stagger: 0.15,
+        ease: "Power2.in",
+        duration: 0.5,
+        delay : 1,
+      });
+      gsap.from("#n-left .right", {
+        y: 70,
+        stagger: -0.15,
+        ease: "Power2.in",
+        duration: 0.5,
+        delay:1,
+      });
       tl.from(targetN, {
         opacity: 0,
         height: 0,
-        backgroundPosition : "-40% -60%",
-        duration: 1.8,
+        backgroundPosition: "-40% -60%",
+        duration: 1.5,
+        ease: "expoScale(0.5,7,none)",
       });
-      tl.from("#n-mid",{
-        scale :0,
-        duration :1,
-      })
-      tl.to(vScroll, {
+ 
+      tl.from("#n-mid", {
+        scale: 0,
         duration: 1,
+      });
+      tl.to(vScroll, {
+        duration: 0.8,
         y: -400,
-        delay : 0.2,
+        delay: 0.5,
         repeat: 1,
         yoyo: true,
         ease: "Power2.in",
       });
       tl.from("#n-left p", {
-        delay : 0.1,
-        opacity : 0,
-        scaleY : 0,
+        opacity: 0,
+        scaleY: 0,
         y: 200,
-        duration : 1,
+        duration: 0.8,
       });
+
       tl.from("#n-right p", {
-        opacity : 0,
-        scaleY : 0,
+        opacity: 0,
+        scaleY: 0,
         y: 200,
-        duration : 1,
+        duration: 0.8,
       });
     } else {
-      tl.reverse()
+      tl.reverse();
+      gsap.to("#n-left .left", {
+        y: -7,
+      });
+      gsap.to("#n-left .right", {
+        y: -7,
+      });
     }
   });
 });
+
 observerN.observe(targetN);

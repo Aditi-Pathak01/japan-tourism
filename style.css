@@ -10,7 +10,7 @@
 html,
 body {
   height: 100%;
-  width:  100%;
+  width: 100%;
 }
 
 body {
@@ -660,7 +660,7 @@ span {
 }
 /*page-6-food-section*/
 #food {
-  margin-top: 10vh;
+  margin-top: 20vh;
   height: 110vh;
   width: 100vw;
   padding: 8vh 5vw;
@@ -820,9 +820,44 @@ span {
   height: 100%;
   padding: 5vh 3vw;
 }
+
 #n-left,#n-right {
-  color: white;
-  border-radius: 2vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  gap: 2vw;
+}
+#n-left h1 {
+  overflow: hidden;
+  color: ivory;
+  width: 21vw;
+  text-align: center;
+}
+#n-left h1 span {
+  display: inline-block;
+  font-size: 5vw;
+  transform: translateY(-7px);
+}
+#n-left h1 span:nth-child(5){
+  color: red;
+}
+
+#n-left p {
+  font-size: 1vw;
+  font-style: oblique;
+  text-align: center;
+  padding: 0 10vh;
+  color: wheat;
+}
+
+#n-right p {
+  font-size: 1vw;
+  font-style: oblique;
+  text-align: center;
+  color: wheat;
+  padding: 0 5vh;
+  line-height: 1.1;
 }
 #n-mid {
   width: 28%;
