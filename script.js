@@ -438,21 +438,20 @@ const observerN = new IntersectionObserver((entries) => {
         y: 70,
         stagger: 0.15,
         ease: "Power2.in",
-        duration: 0.5,
+        duration: 0.6,
         delay: 1,
       });
       gsap.from("#n-left .right", {
         y: 70,
         stagger: -0.15,
         ease: "Power2.in",
-        duration: 0.5,
+        duration: 0.6,
         delay: 1,
       });
       tl.from(targetN, {
         opacity: 0,
-        height: 0,
         backgroundPosition: "-40% -60%",
-        duration: 1.5,
+        duration: 1.6,
         ease: "expoScale(0.5,7,none)",
         onComplete: function () {
           gsap.to(vScroll, {

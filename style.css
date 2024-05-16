@@ -910,3 +910,10 @@ span {
   text-align: center;
   padding: 1vh 2vw;
 }
+/*footer*/
+#footer {
+  margin-top: 5vh;
+  height: 150vh;
+  width: 102vw;
+  border: 2px solid black;
+}
