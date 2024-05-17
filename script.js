@@ -11,45 +11,51 @@ let festivalSec = document.querySelector("#festival-sec");
 let page6 = document.querySelector("#page-5");
 
 //loading animation
-document.addEventListener("DOMContentLoaded", () => {
-  var tl = gsap.timeline();
-  tl.from("#page-1", {
-    scale: 0,
-    duration: 1.8,
+function loadingAnimation() {
+  document.addEventListener("DOMContentLoaded", () => {
+    var tl = gsap.timeline();
+    tl.from("#page-1", {
+      scale: 0,
+      duration: 1.8,
+    });
+    tl.from(nav, {
+      scale: 0,
+      duration: 1,
+    });
+    tl.to("#title", {
+      y: 20,
+    });
   });
-  tl.from(nav, {
-    scale: 0,
-    duration: 1,
-  });
-  tl.to("#title", {
-    y: 20,
-  });
-});
+}
+loadingAnimation();
 
 //nav animation
-document.addEventListener("scroll", () => {
-  if (scrollY > 100) {
-    gsap.to(nav, {
-      opacity: 0,
-    });
-    gsap.to(backToTop, {
-      opacity: 1,
-    });
-    gsap.to(navScroll, {
-      scale: 1,
-    });
-  } else {
-    gsap.to(nav, {
-      opacity: 1,
-    });
-    gsap.to(backToTop, {
-      opacity: 0,
-    });
-    gsap.to(navScroll, {
-      scale: 0,
-    });
-  }
-});
+function navAnimation() {
+  document.addEventListener("scroll", () => {
+    if (scrollY > 100) {
+      gsap.to(nav, {
+        opacity: 0,
+      });
+      gsap.to(backToTop, {
+        opacity: 1,
+      });
+      gsap.to(navScroll, {
+        scale: 1,
+      });
+    } else {
+      gsap.to(nav, {
+        opacity: 1,
+      });
+      gsap.to(backToTop, {
+        opacity: 0,
+      });
+      gsap.to(navScroll, {
+        scale: 0,
+      });
+    }
+  });
+}
+navAnimation();
 
 //Top btn animation
 backToTop.addEventListener("click", (scrollX) => {
@@ -57,69 +63,77 @@ backToTop.addEventListener("click", (scrollX) => {
 });
 
 //Nav-On Scroll Animation :-click
-navScroll.addEventListener("mouseenter", () => {
-  gsap.to(navScroll, {
-    height: "40vh",
-    width: "20vw",
-  });
-  let clutter =
-    "<div class=menu-opts><a>Culture</a><a>Destination</a><a>Food</a><a>NightLife</a></div>";
-  navScroll.innerHTML = clutter;
+function navScrollAnimation() {
+  navScroll.addEventListener("mouseenter", () => {
+    gsap.to(navScroll, {
+      height: "40vh",
+      width: "20vw",
+    });
+    let clutter =
+      "<div class=menu-opts><a>Culture</a><a>Destination</a><a>Food</a><a>NightLife</a></div>";
+    navScroll.innerHTML = clutter;
 
-  let culture = navScroll.childNodes[0].childNodes[0];
-  culture.addEventListener("click", () => {
-    culture.setAttribute("href", "#page-3");
+    let culture = navScroll.childNodes[0].childNodes[0];
+    culture.addEventListener("click", () => {
+      culture.setAttribute("href", "#page-3");
+    });
+    let destination = navScroll.childNodes[0].childNodes[1];
+    destination.addEventListener("click", () => {
+      destination.setAttribute("href", "#rediscover");
+    });
+    let food = navScroll.childNodes[0].childNodes[2];
+    food.addEventListener("click", () => {
+      food.setAttribute("href", "#food");
+    });
   });
-  let destination = navScroll.childNodes[0].childNodes[1];
-  destination.addEventListener("click", () => {
-    destination.setAttribute("href", "#rediscover");
+  //NavOn Scroll Animation :-Mouse leave
+  navScroll.addEventListener("mouseleave", () => {
+    gsap.to(navScroll, {
+      height: "8vh",
+      width: "10vw",
+    });
+    navScroll.innerHTML = '<i class="ri-menu-add-line"></i><span>Menu</span>';
   });
-  let food = navScroll.childNodes[0].childNodes[2];
-  food.addEventListener("click", () => {
-    food.setAttribute("href", "#food");
-  });
-});
-//NavOn Scroll Animation :-Mouse leave
-navScroll.addEventListener("mouseleave", () => {
-  gsap.to(navScroll, {
-    height: "8vh",
-    width: "10vw",
-  });
-  navScroll.innerHTML = '<i class="ri-menu-add-line"></i><span>Menu</span>';
-});
+}
+navScrollAnimation();
 
 /*//page-2 Animation:-*/
-
-gsap.to(".first-elem", {
-  scrollTrigger: {
-    trigger: "#page-2",
-    pin: true,
-    start: "top top",
-    end: "bottom bottom",
-    endTrigger: ".last",
-    scrub: 1,
-  },
-  y: "-300%",
-  ease: "slow(0.7,0.7,false)",
-  duration: 2.5,
-});
-
-/*Page-3*/
-let target = document.querySelector("#page-3");
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      gsap.from("#p3-right h1", {
-        y: 10,
-        opacity: 0,
-        stagger: -1,
-        delay: 0.4,
-        duration: 0.3,
-      });
-    }
+function page2Animation() {
+  gsap.to(".first-elem", {
+    scrollTrigger: {
+      trigger: "#page-2",
+      pin: true,
+      start: "top top",
+      end: "bottom bottom",
+      endTrigger: ".last",
+      scrub: 1,
+    },
+    y: "-300%",
+    ease: "slow(0.7,0.7,false)",
+    duration: 2.5,
   });
-});
-observer.observe(target);
+}
+page2Animation();
+
+function page3Animation() {
+  let target = document.querySelector("#page-3");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        gsap.from("#p3-right h1", {
+          y: 10,
+          opacity: 0,
+          stagger: -1,
+          delay: 0.4,
+          duration: 0.3,
+        });
+      }
+    });
+  });
+  observer.observe(target);
+}
+page3Animation();
+/*Page-3*/
 
 /*let videoSec = document.querySelector("#video-sec");
 let img = document.querySelector("#video-sec img");
@@ -144,22 +158,25 @@ videoSec.addEventListener("mouseleave", () => {
 });*/
 
 //page4-collage animation
-culture2Items.forEach((item) => {
-  item.addEventListener("mousemove", () => {
-    gsap.to(item.childNodes[1], {
-      bottom: "60%",
-      opacity: 1,
-      duration: 1.2,
+function page4Animation() {
+  culture2Items.forEach((item) => {
+    item.addEventListener("mousemove", () => {
+      gsap.to(item.childNodes[1], {
+        bottom: "60%",
+        opacity: 1,
+        duration: 1.2,
+      });
     });
-  });
 
-  item.addEventListener("mouseleave", () => {
-    gsap.to(item.childNodes[1], {
-      bottom: 0,
-      opacity: 0,
+    item.addEventListener("mouseleave", () => {
+      gsap.to(item.childNodes[1], {
+        bottom: 0,
+        opacity: 0,
+      });
     });
   });
-});
+}
+page4Animation();
 
 //page5 heading-
 let imgArr = [
@@ -218,272 +235,303 @@ let imgArr = [
     src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1sLZWtudk_VPUXJknpg1Dejzohzk8DK-hqaSVq-IilVi_Gz1P9rv9CtZM2fRE7WKvMRg&usqp=CAU",
   },
 ];
-
-rediscover.addEventListener("mouseenter", () => {
-  gsap.to(rediscover.childNodes[3], {
-    scale: 1,
-  });
-});
-rediscover.addEventListener("mousemove", (dets) => {
-  gsap.to(rediscover.childNodes[3], {
-    left: dets.x - 80 + "px",
-    top: dets.y - 140 + "px",
-    duration: 0.8,
-  });
-});
-rediscover.addEventListener("mouseleave", () => {
-  gsap.to(rediscover.childNodes[3], {
-    scale: 0,
-  });
-});
-
-const throttleFunction = (func, delay) => {
-  //step-1 create a throttle function
-  // Previously called time of the function
-  let prev = 0;
-  return (...args) => {
-    // Current called time of the function
-    let now = new Date().getTime();
-
-    // Logging the difference
-    // between previously
-    // called and current called timings
-
-    // If difference is greater
-    // than delay call
-    // the function again.
-    if (now - prev > delay) {
-      prev = now;
-
-      // "..." is the spread
-      // operator here
-      // returning the function with the
-      // array of arguments
-      return func(...args);
-    }
-  };
-};
-
-let throttledMouseMove = throttleFunction((event) => {
-  let div = document.createElement("div");
-  div.classList.add("img-div");
-  div.style.left = event.clientX - 500 + "px";
-  div.style.top = event.clientY - 600 + "px";
-  let randomIndex = Math.floor(Math.random() * imgArr.length);
-  let img = document.createElement("img");
-  img.src = imgArr[randomIndex].src;
-  div.appendChild(img);
-  rediscover.childNodes[1].appendChild(div);
-  gsap.to(img, {
-    y: 0,
-    duration: 1,
-    ease: "back.out(1.7)",
-    onComplete: () => {
-      gsap.to(img, {
-        y: 500,
-      });
-    },
-  });
-}, 250);
-
-rediscover.childNodes[1].addEventListener("mousemove", throttledMouseMove);
-rediscover.childNodes[1].addEventListener("mouseleave", () => {
-  rediscoverH1.innerHTML = "<h1>Rediscover Japan</h1>";
-});
-
-//page5 content animation:-
-gsap.from(".elem", {
-  x: -200,
-  opacity: 0,
-  duration: 0.7,
-  stagger: 1,
-  scrollTrigger: {
-    trigger: ".elem",
-    scroller: "body",
-    start: "top 80%",
-    end: "top 40%",
-  },
-});
-
-hoverElems.forEach((elem) => {
-  elem.addEventListener("mouseenter", () => {
-    gsap.to(elem.childNodes[5], {
-      scale: 1.2,
+function page5Header() {
+  //
+  //circle
+  rediscover.addEventListener("mouseenter", () => {
+    gsap.to(rediscover.childNodes[3], {
+      scale: 1,
     });
   });
-
-  elem.addEventListener("mousemove", (dets) => {
-    gsap.to(elem.childNodes[5], {
-      x: elem.getBoundingClientRect().width - 150 + "px",
-      y: dets.y - elem.getBoundingClientRect().y - 100 + "px",
-    });
-    gsap.to(elem, {
-      height: "22.4vh",
+  rediscover.addEventListener("mousemove", (dets) => {
+    gsap.to(rediscover.childNodes[3], {
+      left: dets.x - 80 + "px",
+      top: dets.y - 140 + "px",
+      duration: 0.8,
     });
   });
-
-  elem.addEventListener("mouseleave", () => {
-    gsap.to(elem.childNodes[5], {
+  rediscover.addEventListener("mouseleave", () => {
+    gsap.to(rediscover.childNodes[3], {
       scale: 0,
     });
-    gsap.to(elem, {
-      height: "17vh",
-    });
   });
-});
-/**page-6 -FOOD section*/
-//heading
-let food = document.querySelector("#food");
-let span = document.querySelectorAll("#food span");
-food.childNodes[3].addEventListener("mouseenter", () => {
-  span.forEach((spn) => {
-    gsap.to(spn, {
-      rotateY: 320,
-      duration: 1,
-    });
-  });
-});
-//animate when p6 isinthe viewport
+  //throttle fx
+  const throttleFunction = (func, delay) => {
+    //step-1 create a throttle function
+    // Previously called time of the function
+    let prev = 0;
+    return (...args) => {
+      // Current called time of the function
+      let now = new Date().getTime();
 
-let target6 = food;
-const observer6 = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      for (var i = 0; i < span.length; i++) {
-        if (i % 2 === 0) {
-          gsap.from(span[i], {
-            rotate: 90,
-            delay: 0.5,
-            duration: 0.7,
-            x: -100,
-            opacity: 0,
-          });
-          gsap.to("#f-mid .circle", {
-            scale: 1,
-            duration: 0.6,
-            delay: 1.5,
-          });
-          gsap.to("#f-right img", {
-            scale: 1,
-            duration: 0.8,
-            delay: 2,
-          });
-        } else {
-          gsap.from(span[i], {
-            rotate: 90,
-            x: 500,
-            delay: 0.8,
-            duration: 0.7,
-            opacity: 0,
-          });
-          gsap.to("#f-mid .circle", {
-            scale: 0,
-          });
-          gsap.to("#f-right img", {
-            scale: 0,
-          });
-        }
+      // Logging the difference
+      // between previously
+      // called and current called timings
+
+      // If difference is greater
+      // than delay call
+      // the function again.
+      if (now - prev > delay) {
+        prev = now;
+
+        // "..." is the spread
+        // operator here
+        // returning the function with the
+        // array of arguments
+        return func(...args);
       }
-    }
+    };
+  };
+  let throttledMouseMove = throttleFunction((event) => {
+    let div = document.createElement("div");
+    div.classList.add("img-div");
+    div.style.left = event.clientX - 500 + "px";
+    div.style.top = event.clientY - 600 + "px";
+    let randomIndex = Math.floor(Math.random() * imgArr.length);
+    let img = document.createElement("img");
+    img.src = imgArr[randomIndex].src;
+    div.appendChild(img);
+    rediscover.childNodes[1].appendChild(div);
+    gsap.to(img, {
+      y: 0,
+      duration: 1,
+      ease: "back.out(1.7)",
+      onComplete: () => {
+        gsap.to(img, {
+          y: 500,
+        });
+      },
+    });
+  }, 250);
+
+  rediscover.childNodes[1].addEventListener("mousemove", throttledMouseMove);
+  rediscover.childNodes[1].addEventListener("mouseleave", () => {
+    rediscoverH1.innerHTML = "<h1>Rediscover Japan</h1>";
   });
-});
-observer6.observe(target6);
+}
+page5Header();
 
-//animate when food2 isinthe viewport
-let target7 = document.querySelector("#food-2");
-let int;
-const observer7 = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    let tl = gsap.timeline();
-    if (entry.isIntersecting) {
-      tl.from("#f2-left", {
-        opacity: 0,
-        scale: 0,
-        delay: 0.5,
-      });
-
-      tl.to("#food-2 p", {
-        duration: 2.5,
-        ease: "elastic.out(1,0.3)",
-        y: -10,
-        stagger: 1,
-      });
-    }
+//page5 content animation:-
+function page5Content() {
+  gsap.from(".elem", {
+    x: -200,
+    opacity: 0,
+    duration: 0.7,
+    stagger: 1,
+    scrollTrigger: {
+      trigger: ".elem",
+      scroller: "body",
+      start: "top 80%",
+      end: "top 40%",
+    },
   });
-});
-observer7.observe(target7);
-/*NIGHTLIFE P-1 */
-let nlH1 = document.querySelector("#n-left h1");
-let nlH1Text = nlH1.textContent;
-let letters = nlH1Text.split("");
-let clutter = "";
-let halfVal = Math.floor(letters.length / 2);
-letters.forEach((elem, idx) => {
-  if (idx < halfVal) {
-    clutter += `<span class="left">${elem}</span>`;
-  } else {
-    clutter += `<span class="right">${elem}</span>`;
-  }
-});
-nlH1.innerHTML = clutter;
 
-let targetN = document.querySelector("#nightlife");
-let vScroll = document.querySelector("#nightlife .one");
+  hoverElems.forEach((elem) => {
+    elem.addEventListener("mouseenter", () => {
+      gsap.to(elem.childNodes[5], {
+        scale: 1.2,
+      });
+    });
 
-const observerN = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    let tl = gsap.timeline();
-    if (entry.isIntersecting) {
-      gsap.from("#n-left .left", {
-        y: 70,
-        stagger: 0.15,
-        ease: "Power2.in",
-        duration: 0.6,
-        delay: 1,
+    elem.addEventListener("mousemove", (dets) => {
+      gsap.to(elem.childNodes[5], {
+        x: elem.getBoundingClientRect().width - 150 + "px",
+        y: dets.y - elem.getBoundingClientRect().y - 100 + "px",
       });
-      gsap.from("#n-left .right", {
-        y: 70,
-        stagger: -0.15,
-        ease: "Power2.in",
-        duration: 0.6,
-        delay: 1,
+      gsap.to(elem, {
+        height: "22.4vh",
       });
-      tl.from(targetN, {
-        opacity: 0,
-        backgroundPosition: "-40% -60%",
-        duration: 1.6,
-        ease: "expoScale(0.5,7,none)",
-        onComplete: function () {
-          gsap.to(vScroll, {
-            y: -400,
-            duration : 0.9,
-            repeat: 1,
-            yoyo: true,
-            ease: "Power2.in",
-          });
-        },
-      });
-      tl.from("#n-mid", {
+    });
+
+    elem.addEventListener("mouseleave", () => {
+      gsap.to(elem.childNodes[5], {
         scale: 0,
+      });
+      gsap.to(elem, {
+        height: "17vh",
+      });
+    });
+  });
+}
+page5Content();
+
+/**page-6 -FOOD section*/
+function food() {
+  let food = document.querySelector("#food");
+  let span = document.querySelectorAll("#food span");
+  food.childNodes[3].addEventListener("mouseenter", () => {
+    span.forEach((spn) => {
+      gsap.to(spn, {
+        rotateY: 320,
         duration: 1,
       });
-      tl.from("#n-right p", {
-        delay : 0.8,
-        opacity: 0,
-        scale: 0,
-        y: 100,
-        duration: 0.7,
-      });
-      tl.from("#n-left p", {
-        opacity: 0,
-        scale: 0,
-        y: 100,
-        duration: 0.7,
-      });
+    });
+  });
+  let target6 = food;
+  const observer6 = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        for (var i = 0; i < span.length; i++) {
+          if (i % 2 === 0) {
+            gsap.from(span[i], {
+              rotate: 90,
+              delay: 0.5,
+              duration: 0.7,
+              x: -100,
+              opacity: 0,
+            });
+            gsap.to("#f-mid .circle", {
+              scale: 1,
+              duration: 0.6,
+              delay: 1.5,
+            });
+            gsap.to("#f-right img", {
+              scale: 1,
+              duration: 0.8,
+              delay: 2,
+            });
+          } else {
+            gsap.from(span[i], {
+              rotate: 90,
+              x: 500,
+              delay: 0.8,
+              duration: 0.7,
+              opacity: 0,
+            });
+            gsap.to("#f-mid .circle", {
+              scale: 0,
+            });
+            gsap.to("#f-right img", {
+              scale: 0,
+            });
+          }
+        }
+      }
+    });
+  });
+  observer6.observe(target6);
+}
+food();
+
+function food2(){
+  let target7 = document.querySelector("#food-2");
+  const observer7 = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      let tl = gsap.timeline();
+      if (entry.isIntersecting) {
+        tl.from("#f2-left", {
+          opacity: 0,
+          scale: 0,
+          delay: 0.5,
+        });
+  
+        tl.to("#food-2 p", {
+          duration: 2,
+          ease: "elastic.out(1,0.3)",
+          y: -10,
+          stagger: 1,
+        });
+      }
+    });
+  });
+  observer7.observe(target7);
+}
+food2()
+
+/*NIGHTLIFE P-1 */
+function nightLife(){
+  let nlH1 = document.querySelector("#n-left h1");
+  let nlH1Text = nlH1.textContent;
+  let letters = nlH1Text.split("");
+  let clutter = "";
+  let halfVal = Math.floor(letters.length / 2);
+  letters.forEach((elem, idx) => {
+    if (idx < halfVal) {
+      clutter += `<span class="left">${elem}</span>`;
     } else {
-      tl.reverse();
+      clutter += `<span class="right">${elem}</span>`;
     }
   });
-});
+  nlH1.innerHTML = clutter;
+  
+  let targetN = document.querySelector("#nightlife");
+  let vScroll = document.querySelector("#nightlife .one");
+  
+  const observerN = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      let tl = gsap.timeline();
+      if (entry.isIntersecting) {
+        gsap.from("#n-left .left", {
+          y: 70,
+          stagger: 0.15,
+          ease: "Power2.in",
+          duration: 0.6,
+          delay: 1,
+        });
+        gsap.from("#n-left .right", {
+          y: 70,
+          stagger: -0.15,
+          ease: "Power2.in",
+          duration: 0.6,
+          delay: 1,
+        });
+        tl.from(targetN, {
+          opacity: 0,
+          backgroundPosition: "-40% -60%",
+          duration: 1,
+          ease: "expoScale(0.5,7,none)",
+          onComplete: function () {
+            gsap.to(vScroll, {
+              y: -400,
+              duration: 0.9,
+              repeat: 1,
+              yoyo: true,
+              ease: "Power2.in",
+            });
+          },
+        });
+        tl.from("#n-mid", {
+          scale: 0,
+          duration: 1,
+        });
+        tl.from("#n-right p", {
+          delay: 0.8,
+          opacity: 0,
+          scale: 0,
+          y: 100,
+          duration: 0.7,
+        });
+        tl.from("#n-left p", {
+          opacity: 0,
+          scale: 0,
+          y: 100,
+          duration: 0.7,
+        });
+      } else {
+        tl.reverse();
+      }
+    });
+  });
+  
+  observerN.observe(targetN);
+}
+nightLife()
 
-observerN.observe(targetN);
+function contactUs(){
+  let tl = gsap.timeline({
+    scrollTrigger : {
+      trigger : "#contact-us",
+      scroller : "body",
+      markers : true,
+      start : "top 50%",
+      end : "top 0%",
+    }
+  })
+  tl.from("#contact-us span",{
+    duration : 1,
+    opacity : 0,
+    x : 300,
+    stagger : 0.25,
+  })
+}
+contactUs()
