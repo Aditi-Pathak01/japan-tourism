@@ -413,7 +413,7 @@ function food() {
 }
 food();
 
-function food2(){
+function food2() {
   let target7 = document.querySelector("#food-2");
   const observer7 = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -424,7 +424,7 @@ function food2(){
           scale: 0,
           delay: 0.5,
         });
-  
+
         tl.to("#food-2 p", {
           duration: 2,
           ease: "elastic.out(1,0.3)",
@@ -436,10 +436,10 @@ function food2(){
   });
   observer7.observe(target7);
 }
-food2()
+food2();
 
 /*NIGHTLIFE P-1 */
-function nightLife(){
+function nightLife() {
   let nlH1 = document.querySelector("#n-left h1");
   let nlH1Text = nlH1.textContent;
   let letters = nlH1Text.split("");
@@ -453,10 +453,10 @@ function nightLife(){
     }
   });
   nlH1.innerHTML = clutter;
-  
+
   let targetN = document.querySelector("#nightlife");
   let vScroll = document.querySelector("#nightlife .one");
-  
+
   const observerN = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       let tl = gsap.timeline();
@@ -512,8 +512,44 @@ function nightLife(){
       }
     });
   });
-  
+
   observerN.observe(targetN);
 }
-nightLife()
+nightLife();
 
+function footer() {
+  let footer = document.querySelector("footer");
+  gsap.to(navScroll, {
+    opacity : 0,
+    scale :0,
+    ease : "Power2.in",
+    scrollTrigger : {
+      trigger : footer,
+      scroller : "body",
+      start : "top 85%",
+      end : "top 45%",
+      scrub : true,
+    }
+  });
+  let a = document.querySelectorAll(".fdiv a");
+  gsap.from(a,{
+     y: "100%",
+    opacity : 0,
+    duration : 0.5,
+    stagger : 0.3,
+    scrollTrigger : {
+      trigger : footer,
+      scroller : "body",
+      start : "top 80%",
+      end : "top 45%",
+    },
+    onComplete : function(){
+     gsap.to(".socials a",{
+      rotate : 360,
+      duration : 1,
+      delay : 0.3,
+     })
+    }
+  })
+}
+footer()
