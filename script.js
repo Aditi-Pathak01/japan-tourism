@@ -517,21 +517,3 @@ function nightLife(){
 }
 nightLife()
 
-function contactUs(){
-  let tl = gsap.timeline({
-    scrollTrigger : {
-      trigger : "#contact-us",
-      scroller : "body",
-      markers : true,
-      start : "top 50%",
-      end : "top 0%",
-    }
-  })
-  tl.from("#contact-us span",{
-    duration : 1,
-    opacity : 0,
-    x : 300,
-    stagger : 0.25,
-  })
-}
-contactUs()
