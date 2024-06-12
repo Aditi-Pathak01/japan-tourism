@@ -494,13 +494,9 @@ span {
 }
 .elem > p {
   font-size: 1vw;
-  transform: translateY(100px);
   transition: all ease 1.2s;
-  margin-top: 1.5vh;
+  margin-top: 1.3vh;
   text-align: center;
-}
-.elem:hover p {
-  transform: translateY(0);
 }
 .elem p > span {
   font-size: 1vw;
