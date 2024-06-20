@@ -476,7 +476,7 @@ span {
   border-right: 4px solid #613b16;
 }
 .elem {
-  height: 17vh;
+  height: 20vh;
   width: 100%;
   position: relative;
   z-index: 2;
@@ -492,14 +492,10 @@ span {
   font-size: 1.8vw;
   text-align: center;
 }
-.elem > p {
+.elem  >p {
   font-size: 1vw;
-  transition: all ease 1.2s;
   margin-top: 1.3vh;
   text-align: center;
-}
-.elem p > span {
-  font-size: 1vw;
 }
 .elem #img-hover {
   position: absolute;

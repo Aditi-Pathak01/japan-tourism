@@ -531,25 +531,5 @@ function footer() {
       scrub : true,
     }
   });
-  let a = document.querySelectorAll(".fdiv a");
-  gsap.from(a,{
-     y: "100%",
-    opacity : 0,
-    duration : 0.5,
-    stagger : 0.3,
-    scrollTrigger : {
-      trigger : footer,
-      scroller : "body",
-      start : "top 80%",
-      end : "top 45%",
-    },
-    onComplete : function(){
-     gsap.to(".socials a",{
-      rotate : 360,
-      duration : 1,
-      delay : 0.3,
-     })
-    }
-  })
 }
 footer()
